@@ -30,7 +30,8 @@ jobs:
         with:
           host: ${{ secrets.SYNOLOGY_HOST }}
           username: ${{ secrets.SYNOLOGY_SSH_USER }}
-          key: ${{ secrets.SYNOLOGY_SSH_KEY }}
+          password: $${{ secrets.SYNOLOGY_SSH_PASSWORD }}
+          # key: ${{ secrets.SYNOLOGY_SSH_KEY }}
           port: ${{ secrets.SYNOLOGY_SSH_PORT }}
           source: "build/"
           target: "/volume1/web/portfolio"
