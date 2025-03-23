@@ -26,7 +26,7 @@ jobs:
         run: yarn build
 
       - name: Deploy
-        uses: appleboy/scp-action@v0.1.3
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.SYNOLOGY_HOST }}
           username: ${{ secrets.SYNOLOGY_SSH_USER }}
