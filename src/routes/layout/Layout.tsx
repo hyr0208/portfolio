@@ -6,7 +6,7 @@ function Layout() {
     <Fragment>
       {/* <Header /> */}
       <main className="">
-        <div className="m-auto">
+        <div className="">
           <Outlet />
         </div>
       </main>

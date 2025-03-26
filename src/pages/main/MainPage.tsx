@@ -1,5 +1,9 @@
 function MainPage() {
-  return <div className="max-w-[1280px] m-auto">MainPage</div>;
+  return (
+    <div className="max-w-[1280px]">
+      <div>MainPage</div>
+    </div>
+  );
 }
 
 export default MainPage;
