@@ -1,3 +1,3 @@
 export const imageData = {
-  BackGroundImage: require("../assets/image/background.avif"),
+  BackGroundImage: require("../assets/image/front_bg.jpg"),
 };
