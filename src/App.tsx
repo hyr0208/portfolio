@@ -1,8 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
+import ScrollToTop from "./routes/ScrollToTop";
+import Router from "./routes";
+
 function App() {
   return (
-    <div className="">
-      <div className="text-xl font-extrabold">portfolio</div>
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Router />
+    </BrowserRouter>
   );
 }
 
