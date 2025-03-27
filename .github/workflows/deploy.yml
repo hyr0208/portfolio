@@ -32,5 +32,6 @@ jobs:
           username: ${{ secrets.SYNOLOGY_SSH_USER }}
           key: ${{ secrets.SYNOLOGY_SSH_KEY }}
           port: ${{ secrets.SYNOLOGY_SSH_PORT }}
-          source: "build/"
+          source: "build/*"
           target: "/volume1/web/portfolio"
+          strip_components: 1
