@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "프론트엔드 개발자 한예린 포트폴리오",
+  "name": "Create Portfolio Sample",
   "icons": [
     {
       "src": "favicon.ico",
