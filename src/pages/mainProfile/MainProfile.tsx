@@ -20,7 +20,7 @@ function MainProfile() {
           </p>
         </div>
 
-        <div className="absolute inset-0 flex items-end justify-center 0">
+        <div className="absolute inset-0 flex items-end justify-center">
           <img
             src={yerinImage}
             alt=""
