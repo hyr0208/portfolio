@@ -26,7 +26,8 @@ function AboutMe() {
 
             <div>
               <p className="text-white font-light text-center md:text-[24px] text-[18px]">
-                포기하지 않고 책임감있게 일하는 프론트엔드 개발자입니다.
+                포기하지 않고 책임감있게 일하는 프론트엔드 개발자{" "}
+                <span className="font-bold">한예린</span>입니다.
               </p>
             </div>
           </div>
