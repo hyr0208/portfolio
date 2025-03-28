@@ -1,5 +1,5 @@
 import BackGroundImage from "../../assets/image/front_bg.jpg";
-import yerinImage from "../../assets/image/yerinImage.png";
+import yerinImage from "../../assets/image/yerin.png";
 
 function MainProfile() {
   return (
