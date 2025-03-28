@@ -6,11 +6,14 @@ import js from "../../assets/image/icon_javascript.svg";
 import react from "../../assets/image/react.png";
 import tailwind from "../../assets/image/tailwind.png";
 import ts from "../../assets/image/ts.png";
+import github from "../../assets/image/icon_github.svg";
+import discord from "../../assets/image/icon_discord.svg";
+import figma from "../../assets/image/icon_figma.svg";
 
 function AboutMe() {
   return (
     <div className="">
-      <div className=" relative h-screen bg-[#232323] px-10 pt-10 z-1 max-lg:h-auto max-lg:py-20">
+      <div className=" relative h-full bg-[#232323] px-10 py-10 z-1 max-lg:h-auto max-lg:py-20">
         <h2 className="text-white text-6xl ">About me</h2>
 
         <div className="md:px-52 px-5 flex flex-col gap-20">
@@ -28,41 +31,51 @@ function AboutMe() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start gap-6">
+          <div className="flex flex-col items-start gap-6 ">
             <div className="text-white text-4xl font-normal">Skill & Tolls</div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
               <div>
                 <div className="text-white text-2xl font-light pb-5">
                   FrontEnd
                 </div>
 
-                <div className="flex gap-2">
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={html} alt="" className="w-[36px] h-[25px]" />
-                  </div>
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={css} alt="" className="w-[36px] h-[25px]" />
-                  </div>
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={js} alt="" className="w-[36px] h-[25px]" />
-                  </div>
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={ts} alt="" className="w-[26px] h-[20px]" />
-                  </div>
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={react} alt="" className="w-[30px] h-[23px]" />
-                  </div>
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={tailwind} alt="" className="w-[25px] h-[23px]" />
-                  </div>
-                  <div className="p-3 rounded-xl bg-black flex flex-col justify-center items-center w-auto">
-                    <img src={electron} alt="" className="w-[25px] h-[23px]" />
-                  </div>
+                <div className="flex flex-wrap md:gap-3 gap-2">
+                  {[html, css, js, ts, react, tailwind, electron].map(
+                    (icon, idx) => (
+                      <div
+                        key={idx}
+                        className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
+                      >
+                        <img
+                          src={icon}
+                          alt=""
+                          className="w-[36px] h-[25px] object-contain"
+                        />
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
 
-              {/* <div className="text-white text-2xl font-light pb-5">Tools</div> */}
+              <div>
+                <div className="text-white text-2xl font-light pb-5">Tools</div>
+
+                <div className="flex flex-wrap md:gap-3 gap-2">
+                  {[github, discord, figma].map((icon, idx) => (
+                    <div
+                      key={idx}
+                      className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
+                    >
+                      <img
+                        src={icon}
+                        alt=""
+                        className="w-[36px] h-[25px] object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
