@@ -6,7 +6,7 @@ function MainProfile() {
   return (
     <div>
       <div className="relative h-screen overflow-hidden">
-        <div className="absolute top-14 left-20 z-10">
+        <div className="absolute md:top-14 top-5 md:left-20 left-5 z-10">
           <Tooltip text="GitHub로 이동" position="bottom">
             <a
               href="https://github.com/hyr0208"
