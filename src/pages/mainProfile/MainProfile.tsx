@@ -1,19 +1,22 @@
 import BackGroundImage from "../../assets/image/front_bg.jpg";
 import yerinImage from "../../assets/image/yerin.png";
+import Tooltip from "../../components/ToolTip";
 
 function MainProfile() {
   return (
     <div>
-      <div className="relative h-screen">
-        <div className="absolute top-14 left-20 z-10">
-          <a
-            href="https://github.com/hyr0208"
-            className="relative flex gap-1 items-center flex-col z-20 font-light py-1 px-2 transition-all ease-in-out duration-[0.3s] hover:text-[#fff] after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:z-[-1] after:w-full after:h-1 after:bg-black after:block after:transition-all after:ease-in-out after:duration-[0.3s] hover:after:h-full tracking-tight"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+      <div className="relative h-screen overflow-hidden">
+        <div className="absolute md:top-14 top-5 md:left-20 left-5 z-10">
+          <Tooltip text="GitHub로 이동" position="bottom">
+            <a
+              href="https://github.com/hyr0208"
+              className="relative flex gap-1 items-center flex-col z-20 font-light py-1 px-2 transition-all ease-in-out duration-[0.3s] hover:text-[#fff] after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:z-[-1] after:w-full after:h-1 after:bg-black after:block after:transition-all after:ease-in-out after:duration-[0.3s] hover:after:h-full tracking-tight"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </Tooltip>
         </div>
 
         <img
