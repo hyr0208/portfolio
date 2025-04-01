@@ -14,7 +14,7 @@ function AboutMe() {
   return (
     <div className="">
       <div className=" relative h-full bg-[#232323] px-10 py-10 z-1 max-lg:h-auto max-lg:py-20">
-        <h2 className="text-white text-6xl ">About me</h2>
+        <h2 className="text-white md:text-6xl text-5xl">About me</h2>
 
         <div className="md:px-52 px-5 flex flex-col gap-20">
           <div className="flex flex-col items-center pt-10">
@@ -25,7 +25,7 @@ function AboutMe() {
             />
 
             <div>
-              <p className="text-white font-light text-center md:text-[24px] text-[18px]">
+              <p className="text-white font-light text-center md:text-[24px] text-[16px]">
                 포기하지 않고 책임감있게 일하는 프론트엔드 개발자{" "}
                 <span className="font-bold">한예린</span>입니다.
               </p>
@@ -33,11 +33,13 @@ function AboutMe() {
           </div>
 
           <div className="flex flex-col items-start gap-6 ">
-            <div className="text-white text-4xl font-normal">Skill & Tolls</div>
+            <div className="text-white md:text-4xl text-3xl font-normal">
+              Skill & Tolls
+            </div>
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
               <div>
-                <div className="text-white text-2xl font-light pb-5">
+                <div className="text-white md:text-2xl text-[20px] font-light pb-5">
                   FrontEnd
                 </div>
 
@@ -60,7 +62,9 @@ function AboutMe() {
               </div>
 
               <div>
-                <div className="text-white text-2xl font-light pb-5">Tools</div>
+                <div className="text-white md:text-2xl text-[20px] font-light pb-5">
+                  Tools
+                </div>
 
                 <div className="flex flex-wrap md:gap-3 gap-2">
                   {[github, discord, figma].map((icon, idx) => (
