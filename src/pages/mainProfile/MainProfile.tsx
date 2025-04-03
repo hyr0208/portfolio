@@ -30,7 +30,7 @@ function MainProfile() {
             Front-End Developer
           </p>
           <p className="absolute top-[9%] md:top-[10%] left-1/2 -translate-x-1/2 text-[26px] md:text-[50px] text-black font-normal leading-none">
-            프론트엔드 개발자
+            <span className="typing">프론트엔드 개발자</span>
           </p>
         </div>
 
