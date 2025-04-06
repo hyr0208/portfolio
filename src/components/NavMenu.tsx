@@ -50,7 +50,7 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
         <button
           key={tab.targetName}
           onClick={tab.scrollToTarget}
-          className="text-2xl md:text-4xl font-semibold text-white opacity-70 hover:opacity-100 transition-opacity"
+          className="text-left text-2xl md:text-5xl font-medium text-white opacity-70 hover:opacity-100 transition-opacity"
         >
           {tab.targetName}
         </button>

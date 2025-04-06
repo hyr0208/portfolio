@@ -18,16 +18,18 @@ function MainPage() {
 
   return (
     <div className="">
-      <NavMenu navTabs={navTabs} />
       <MainProfile />
 
       <AboutMe />
-      <div id="menu-trigger" className="h-1"></div>
-      <section id="Career">
-        <Career />
-      </section>
-      <section id="Project">...</section>
-      <section id="Education">...</section>
+
+      <NavMenu navTabs={navTabs} />
+      <div className="">
+        <div id="menu-trigger" className="">
+          <Career />
+          {/* <section id="Project">...</section> */}
+          {/* <section id="Education">...</section> */}
+        </div>
+      </div>
 
       <button
         className="fixed bottom-5 right-5 bg-white w-[50px] flex h-[50px] items-center justify-center font-bold rounded-full hover:opacity-80 shadow-lg"
