@@ -1,9 +1,7 @@
 function Career() {
   return (
-    <div>
-      <div className="relative h-screen bg-[#232323] max-lg:h-auto">
-        <div className="">Career</div>
-      </div>
+    <div className="min-h-screen bg-red-500 flex items-center justify-center">
+      <h2 className="text-white text-3xl font-bold">Career Section</h2>
     </div>
   );
 }

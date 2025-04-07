@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 type ScrollTarget = {
   targetRef: React.RefObject<HTMLElement | null>;
@@ -9,52 +9,27 @@ type ScrollTarget = {
 };
 
 function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const target = document.getElementById("menu-trigger");
-
-    if (!target) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setVisible(entry.isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "0px 0px -90% 0px", // 화면 하단 기준 거의 올라왔을 때 감지
-        threshold: 0,
-      }
-    );
-
-    observer.observe(target);
-
-    return () => {
-      observer.unobserve(target);
-    };
-  }, []);
-
   return (
-    <nav
-      className={`
-        fixed z-50 
-        top-4 w-full justify-center
-        flex gap-6 
-        transition-all duration-700 ease-in-out transform
-
-        md:top-20 md:left-16 md:w-auto md:flex-col
-        ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"}
-      `}
-    >
-      {navTabs.map((tab) => (
-        <button
-          key={tab.targetName}
-          onClick={tab.scrollToTarget}
-          className="text-left text-2xl md:text-5xl font-medium text-white opacity-70 hover:opacity-100 transition-opacity"
-        >
-          {tab.targetName}
-        </button>
-      ))}
+    <nav className="sticky top-20 px-4 py-6">
+      <ul className="flex md:flex-col gap-4 md:gap-6 items-start justify-center">
+        {navTabs.map((tab) => (
+          <li key={tab.targetName}>
+            <button
+              onClick={tab.scrollToTarget}
+              className={`
+                text-xl md:text-2xl font-medium transition-opacity
+                ${
+                  tab.isTarget
+                    ? "text-white opacity-100"
+                    : "text-white opacity-40 hover:opacity-100"
+                }
+              `}
+            >
+              {tab.targetName}
+            </button>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 }
