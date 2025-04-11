@@ -10,7 +10,7 @@ function MainProfile() {
           <Tooltip text="GitHub로 이동" position="bottom">
             <a
               href="https://github.com/hyr0208"
-              className="relative flex gap-1 items-center flex-col z-20 font-light py-1 px-2 transition-all ease-in-out duration-[0.3s] hover:text-[#fff] after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:z-[-1] after:w-full after:h-1 after:bg-black after:block after:transition-all after:ease-in-out after:duration-[0.3s] hover:after:h-full tracking-tight"
+              className="relative flex gap-1 items-center flex-col z-20 font-normal py-1 px-2 transition-all ease-in-out duration-[0.3s] hover:text-[#fff] text-black after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:z-[-1] after:w-full after:h-1 after:bg-black after:block after:transition-all after:ease-in-out after:duration-[0.3s] hover:after:h-full"
               target="_blank"
               rel="noopener noreferrer"
             >
