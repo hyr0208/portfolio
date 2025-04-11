@@ -14,8 +14,8 @@ function useScrollToTarget(id: string) {
       },
       {
         root: null,
-        threshold: 0.6, // 최소 60% 보여야 감지
-        rootMargin: "-30% 0px -30% 0px", // 위아래 30% 여유
+        threshold: [0.3, 0.7], // 요소가 30%~70% 정도 보일 때 감지
+        rootMargin: "-20% 0px" // 화면 중앙 부근에서 감지하도록 설정
       }
     );
 

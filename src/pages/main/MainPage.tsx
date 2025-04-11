@@ -1,18 +1,18 @@
 import React from "react";
-import useScrollToTarget from "../../hooks/useScrollToTarget";
 import MainProfile from "../mainProfile/MainProfile";
 import AboutMe from "../aboutMe/AboutMe";
 import Career from "../career/Career";
 import Project from "../project/Project";
 import Education from "../education/Education";
+import useScrollToTarget from "../../hooks/useScrollToTarget";
 import NavMenu from "../../components/NavMenu";
 
 function MainPage() {
-  const navTabs = [
-    useScrollToTarget("Career"),
-    useScrollToTarget("Project"),
-    useScrollToTarget("Education"),
-  ];
+  const careerSection = useScrollToTarget("Career");
+  const projectSection = useScrollToTarget("Project");
+  const educationSection = useScrollToTarget("Education");
+
+  const navTabs = [careerSection, projectSection, educationSection];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -24,50 +24,37 @@ function MainPage() {
       <MainProfile />
       <AboutMe />
 
-      {/* 본문: 2단 구조 */}
-      <div className="flex md:flex-row">
-        {/* 왼쪽 메뉴 */}
-        <div className="w-64 px-4">
-          <NavMenu navTabs={navTabs} />
-        </div>
+      {/* 네비게이션 메뉴 */}
+      <NavMenu navTabs={navTabs} />
 
-        {/* 오른쪽 콘텐츠 */}
-        <div className="flex-1 px-4">
-          <section id="Career">
-            <div
-              ref={navTabs[0].targetRef}
-              className="min-h-screen pt-20  flex items-center justify-center"
-            >
-              <h2 className="text-white text-4xl font-bold">Career Section</h2>
-            </div>
-          </section>
+      {/* 콘텐츠 영역 */}
+      <div className="w-full">
+        <section id="Career">
+          <div
+            ref={careerSection.targetRef}
+            className="min-h-screen pt-20 flex items-center justify-center"
+          >
+            <Career />
+          </div>
+        </section>
 
-          <section id="Project">
-            <div
-              ref={navTabs[1].targetRef}
-              className="min-h-screen flex items-center justify-center"
-            >
-              <h2 className="text-white text-4xl font-bold">Project Section</h2>
-            </div>
-          </section>
-
-          <section id="Education">
-            <div
-              ref={navTabs[2].targetRef}
-              className="min-h-screen flex items-center justify-center"
-            >
-              <h2 className="text-white text-4xl font-bold">
-                Education Section
-              </h2>
-            </div>
-          </section>
-          {/* <section id="Project" ref={navTabs[1].targetRef}>
+        <section id="Project">
+          <div
+            ref={projectSection.targetRef}
+            className="min-h-screen flex items-center justify-center"
+          >
             <Project />
-          </section>
-          <section id="Education" ref={navTabs[2].targetRef}>
+          </div>
+        </section>
+
+        <section id="Education">
+          <div
+            ref={educationSection.targetRef}
+            className="min-h-screen flex items-center justify-center"
+          >
             <Education />
-          </section> */}
-        </div>
+          </div>
+        </section>
       </div>
 
       {/* 맨 위로 스크롤 버튼 */}

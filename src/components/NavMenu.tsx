@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type ScrollTarget = {
   targetRef: React.RefObject<HTMLElement | null>;
@@ -9,15 +9,36 @@ type ScrollTarget = {
 };
 
 function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const firstSection = navTabs[0]?.targetRef.current;
+      if (firstSection) {
+        const rect = firstSection.getBoundingClientRect();
+        setIsFixed(rect.top <= 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [navTabs]);
+
   return (
-    <nav className="sticky top-20 px-4 py-6">
-      <ul className="flex md:flex-col gap-4 md:gap-6 items-start justify-center">
+    <nav
+      className={`
+      w-full bg-[#232323] px-4 md:px-8 py-3 md:py-6 z-50
+      ${isFixed ? "fixed top-0 left-0" : "relative"}
+      md:sticky md:top-20 md:bg-transparent
+    `}
+    >
+      <ul className="flex justify-center md:flex-col gap-4 md:gap-6 items-center md:items-start">
         {navTabs.map((tab) => (
           <li key={tab.targetName}>
             <button
               onClick={tab.scrollToTarget}
               className={`
-                text-xl md:text-2xl font-medium transition-opacity
+                text-2xl md:text-5xl font-medium transition-all duration-300 ease-in-out
                 ${
                   tab.isTarget
                     ? "text-white opacity-100"
