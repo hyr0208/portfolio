@@ -4,13 +4,9 @@ import { Outlet } from "react-router-dom";
 function Layout() {
   return (
     <Fragment>
-      {/* <Header /> */}
-      <main className="">
-        <div className="">
-          <Outlet />
-        </div>
+      <main className="w-full">
+        <Outlet />
       </main>
-      {/* <Footer /> */}
     </Fragment>
   );
 }
