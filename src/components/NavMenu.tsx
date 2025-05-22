@@ -26,11 +26,11 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
 
   return (
     <nav
-      className={`
-      w-full bg-[#232323] px-4 md:px-8 py-3 md:py-6 z-50
-      ${isFixed ? "fixed top-0 left-0" : "relative"}
-      md:sticky md:top-20 md:bg-transparent
-    `}
+      className={`${
+        isFixed
+          ? "fixed top-0 left-0 right-0 bg-[#232323] px-4 md:px-8 py-3 md:py-6 z-50 transition-all duration-300 ease-in-out"
+          : "relative"
+      } w-full md:fixed md:left-0 md:h-screen md:w-[300px]`}
     >
       <ul className="flex justify-center md:flex-col gap-4 md:gap-6 items-center md:items-start">
         {navTabs.map((tab) => (
