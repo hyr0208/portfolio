@@ -32,7 +32,7 @@ function MainPage() {
         <section id="Career">
           <div
             ref={careerSection.targetRef}
-            className="min-h-screen pt-20 flex items-center justify-center"
+            className="pt-20 px-11 flex items-center justify-end"
           >
             <Career />
           </div>
