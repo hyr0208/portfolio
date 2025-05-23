@@ -33,26 +33,26 @@ function Career() {
 
         <div className="bg-[#373737] md:w-[600px] p-5 rounded md:h-[30rem] h-[40rem] flex flex-col justify-between">
           <div className="tracking-tighter flex flex-col gap-3">
-            <span className="text-[14px] text-[#a6a6a6]">2021.11 - 현재</span>
+            <span className="text-[14px] text-[#a6a6a6]">2021.11 - 재직중</span>
             <div className="flex flex-col gap-1">
               <p className="text-[24px]">(주)엔투소프트</p>
               <p className="text-[14px]">@ 프로젝트팀 - 프론트엔드 웹 개발</p>
             </div>
 
             <div className="text-[16px] text-[#a6a6a6]">
-              <li>저축은행 모바일앱 기획 및 유지보수</li>
+              <li>저축은행 모바일앱 기획 및 유지보수 작업</li>
               <li>
                 HTML, CSS, Javascript를 활용한 저축은행 모바일 웹 대출시스템
                 작업
               </li>
-              <li>React, Javascript를 활요한 저축은행 모바일웹 작업</li>
+              <li>React, Javascript를 활용한 저축은행 모바일 웹 작업</li>
               <li>(주)오너마인드 랜딩페이지 작업</li>
               <li>
                 React, Next.js를 활용한 저축은행 디지털 전환 홈페이지 유지보수
                 작업
               </li>
               <li>
-                React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트
+                React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트 작업
               </li>
             </div>
           </div>
