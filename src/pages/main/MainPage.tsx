@@ -1,4 +1,3 @@
-import React from "react";
 import MainProfile from "../mainProfile/MainProfile";
 import AboutMe from "../aboutMe/AboutMe";
 import Career from "../career/Career";
@@ -25,10 +24,10 @@ function MainPage() {
       <AboutMe />
 
       {/* 네비게이션 메뉴 */}
-      <NavMenu navTabs={navTabs} />
 
       {/* 콘텐츠 영역 */}
       <div className="w-full">
+        <NavMenu navTabs={navTabs} />
         <section id="Career">
           <div
             ref={careerSection.targetRef}
@@ -38,7 +37,7 @@ function MainPage() {
           </div>
         </section>
 
-        <section id="Project">
+        {/* <section id="Project">
           <div
             ref={projectSection.targetRef}
             className="min-h-screen flex items-center justify-center"
@@ -54,7 +53,7 @@ function MainPage() {
           >
             <Education />
           </div>
-        </section>
+        </section> */}
       </div>
 
       {/* 맨 위로 스크롤 버튼 */}
