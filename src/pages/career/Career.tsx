@@ -9,9 +9,9 @@ import ts from "../../assets/image/ts.png";
 function Career() {
   return (
     <div className="min-h-screen">
-      <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 mt-[2rem] pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-2 max-2xl:h-screen">
-        <div className="bg-[#373737] p-5 rounded h-[30rem]">
-          <div className="tracking-tighter flex flex-col gap-3">
+      <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 mt-[2rem] pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-screen">
+        <div className="bg-[#373737] overflow-hidden flex flex-col rounded h-[30rem] relative justify-between">
+          <div className="p-5 flex flex-col gap-3 text-white">
             <span className="text-[14px] text-[#a6a6a6]">
               2019.01 - 2021.09
             </span>
