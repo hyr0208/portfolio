@@ -23,6 +23,7 @@ export const projects: Project[] = [
     id: 2,
     title: "포트폴리오 사이트",
     description: "저만의 포트폴리오를 만들기위해 제작한 사이트입니다.",
+    image: "/images/portfolio.webp",
     tags: ["솔로", "반응형", "포트폴리오"],
     category: "single",
     type: "portfolio",
