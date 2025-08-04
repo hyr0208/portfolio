@@ -26,34 +26,36 @@ function MainPage() {
       {/* 네비게이션 메뉴 */}
 
       {/* 콘텐츠 영역 */}
-      <div className="w-full">
+      <div className="flex">
         <NavMenu navTabs={navTabs} />
-        <section id="Career">
-          <div
-            ref={careerSection.targetRef}
-            className="pt-20 px-11 flex items-center justify-end"
-          >
-            <Career />
-          </div>
-        </section>
+        <div className="flex-1 md:ml-[300px]">
+          <section id="Career">
+            <div
+              ref={careerSection.targetRef}
+              className="pt-20 px-11 flex items-center justify-end"
+            >
+              <Career />
+            </div>
+          </section>
 
-        {/* <section id="Project">
-          <div
-            ref={projectSection.targetRef}
-            className="min-h-screen flex items-center justify-center"
-          >
-            <Project />
-          </div>
-        </section>
+          <section id="Project">
+            <div
+              ref={projectSection.targetRef}
+              className="min-h-screen"
+            >
+              <Project />
+            </div>
+          </section>
 
-        <section id="Education">
-          <div
-            ref={educationSection.targetRef}
-            className="min-h-screen flex items-center justify-center"
-          >
-            <Education />
-          </div>
-        </section> */}
+          <section id="Education">
+            <div
+              ref={educationSection.targetRef}
+              className="min-h-screen flex items-center justify-center"
+            >
+              <Education />
+            </div>
+          </section>
+        </div>
       </div>
 
       {/* 맨 위로 스크롤 버튼 */}
