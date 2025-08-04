@@ -47,14 +47,14 @@ function MainPage() {
             </div>
           </section>
 
-          <section id="Education">
+          {/* <section id="Education">
             <div
               ref={educationSection.targetRef}
               className="min-h-screen flex items-center justify-center"
             >
               <Education />
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
 
