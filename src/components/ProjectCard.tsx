@@ -32,10 +32,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {!project.image && (
           <h3 className="text-white font-semibold text-lg">{project.title}</h3>
         )}
-        <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
+        <p className="text-gray-300 text-sm font-light leading-relaxed">{project.description}</p>
         
         {/* 태그들 */}
-        <div className="flex flex-wrap gap-2 mt-3">
+        <div className="flex flex-wrap gap-2 mt-6">
           {project.tags.map((tag, index) => (
             <span 
               key={index}
