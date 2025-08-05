@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Project } from '../constants/projectData';
+import ProjectCardOverlay from './ProjectCardOverlay';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="bg-[#373737] rounded-lg p-4 hover:bg-[#404040] transition-colors duration-200 cursor-pointer">
+    <div 
+      className="bg-[#373737] rounded-lg p-4 hover:bg-[#404040] transition-colors duration-200 cursor-pointer relative overflow-hidden"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* 프로젝트 이미지 */}
       <div className="w-full h-48 bg-[#404040] rounded-md mb-4 flex items-center justify-center relative">
         {project.image ? (
@@ -15,10 +22,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             src={project.image} 
             alt={project.title}
             className="w-full h-full object-cover rounded-md"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
           />
-        ) : (
-          <div className="text-gray-400 text-sm">이미지 없음</div>
-        )}
+        ) : null}
+        <div className={`text-gray-400 text-sm ${project.image ? 'hidden' : ''}`}>
+          이미지 없음
+        </div>
 
       </div>
       
@@ -39,6 +51,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           ))}
         </div>
       </div>
+      
+      {/* 호버 오버레이 - 모든 카드에 적용 */}
+      <ProjectCardOverlay 
+        title={project.title}
+        isVisible={isHovered}
+        githubUrl={project.githubUrl}
+        siteUrl={project.siteUrl}
+      />
     </div>
   );
 };
