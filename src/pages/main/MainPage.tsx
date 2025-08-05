@@ -28,11 +28,11 @@ function MainPage() {
       {/* 콘텐츠 영역 */}
       <div className="flex">
         <NavMenu navTabs={navTabs} />
-        <div className="flex-1 md:ml-[300px]">
+        <div className="flex-1 md:ml-[300px] pt-16 md:pt-0">
           <section id="Career">
             <div
               ref={careerSection.targetRef}
-              className="pt-20 px-11 flex items-center justify-end"
+              className="pt-32 md:pt-20 px-6 md:px-11 flex items-center justify-end"
             >
               <Career />
             </div>

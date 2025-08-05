@@ -13,9 +13,10 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const firstSection = navTabs[0]?.targetRef.current;
-      if (firstSection) {
-        const rect = firstSection.getBoundingClientRect();
+      const careerSection = navTabs[0]?.targetRef.current;
+      if (careerSection) {
+        const rect = careerSection.getBoundingClientRect();
+        // Career 섹션이 화면 상단에 도달했을 때 고정
         setIsFixed(rect.top <= 0);
       }
     };
@@ -46,7 +47,7 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
                 }
               `}
             >
-              {tab.targetName}
+              {tab.targetName === "Career" ? "Career" : tab.targetName}
             </button>
           </li>
         ))}
