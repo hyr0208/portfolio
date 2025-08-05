@@ -5,13 +5,17 @@ interface ProjectCardOverlayProps {
   isVisible: boolean;
   githubUrl?: string;
   siteUrl?: string;
+  detailUrl?: string;
+  onDetailClick?: () => void;
 }
 
 const ProjectCardOverlay: React.FC<ProjectCardOverlayProps> = ({ 
   title, 
   isVisible, 
   githubUrl, 
-  siteUrl 
+  siteUrl,
+  detailUrl,
+  onDetailClick
 }) => {
   if (!isVisible) return null;
 
@@ -27,10 +31,26 @@ const ProjectCardOverlay: React.FC<ProjectCardOverlayProps> = ({
     }
   };
 
+  const handleDetailClick = () => {
+    if (onDetailClick) {
+      onDetailClick();
+    } else if (detailUrl) {
+      window.open(detailUrl, '_blank');
+    }
+  };
+
   return (
     <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center rounded-lg transition-all duration-300">
       <h3 className="text-white font-bold text-xl mb-6">{title}</h3>
       <div className="flex flex-col gap-3">
+        {detailUrl && (
+          <button 
+            onClick={handleDetailClick}
+            className="px-6 py-2 border border-white text-white rounded-md hover:bg-white hover:text-black transition-colors duration-200"
+          >
+            자세히 보기
+          </button>
+        )}
         {githubUrl && (
           <button 
             onClick={handleGithubClick}

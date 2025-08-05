@@ -4,14 +4,15 @@ import ProjectCardOverlay from './ProjectCardOverlay';
 
 interface ProjectCardProps {
   project: Project;
+  onDetailClick?: () => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onDetailClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
-      className="bg-[#373737] rounded-lg p-4 hover:bg-[#404040] transition-colors duration-200 cursor-pointer relative overflow-hidden"
+      className="bg-[#373737] rounded-lg p-4 hover:bg-[#404040] transition-colors duration-200 relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -58,6 +59,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         isVisible={isHovered}
         githubUrl={project.githubUrl}
         siteUrl={project.siteUrl}
+        detailUrl={project.detailUrl}
+        onDetailClick={onDetailClick}
       />
     </div>
   );

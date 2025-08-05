@@ -1,17 +1,17 @@
 import MainProfile from "../mainProfile/MainProfile";
 import AboutMe from "../aboutMe/AboutMe";
 import Career from "../career/Career";
-import Project from "../project/Project";
-import Education from "../education/Education";
+import ProjectPage from "../project/Project";
+import LastPage from "../lastPage/LastPage";
+// import Education from "../education/Education";
 import useScrollToTarget from "../../hooks/useScrollToTarget";
 import NavMenu from "../../components/NavMenu";
 
 function MainPage() {
   const careerSection = useScrollToTarget("Career");
   const projectSection = useScrollToTarget("Project");
-  const educationSection = useScrollToTarget("Education");
 
-  const navTabs = [careerSection, projectSection, educationSection];
+  const navTabs = [careerSection, projectSection];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -43,7 +43,13 @@ function MainPage() {
               ref={projectSection.targetRef}
               className="min-h-screen"
             >
-              <Project />
+              <ProjectPage />
+            </div>
+          </section>
+
+          <section id="LastPage">
+            <div className="min-h-screen">
+              <LastPage />
             </div>
           </section>
 
