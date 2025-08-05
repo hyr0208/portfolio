@@ -26,51 +26,51 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   if (!isOpen || !project) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="flex">
+    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+      <div className="flex flex-col lg:flex-row w-full max-w-6xl max-h-[90vh] lg:max-h-[95vh]">
         {/* 메인 모달 */}
-        <div className="bg-white rounded-lg w-full max-w-6xl max-h-[95vh] overflow-y-auto">
+        <div className="bg-white rounded-lg w-full overflow-y-auto">
           {/* 헤더 */}
-          <div className="p-6 border-b border-gray-200">
+          <div className="p-4 sm:p-6 border-b border-gray-200">
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-2">{project.title}</h2>
-              <p className="text-gray-600">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">{project.title}</h2>
+              <p className="text-sm sm:text-base text-gray-600">
                 {project.category === 'team' ? '팀 프로젝트' : '개인 프로젝트'} • {project.duration === 'side' ? '사이드 프로젝트' : '장기 프로젝트'}
               </p>
             </div>
           </div>
 
           {/* 메인 콘텐츠 */}
-          <div className="p-6">
+          <div className="p-4 sm:p-6">
             {/* 프로젝트 이미지 */}
-            <div className="mb-6">
+            <div className="mb-4 sm:mb-6">
               {project.image ? (
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full h-48 sm:h-64 object-cover rounded-lg"
                 />
               ) : (
-                <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-500">이미지 없음</span>
+                <div className="w-full h-48 sm:h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <span className="text-gray-500 text-sm sm:text-base">이미지 없음</span>
                 </div>
               )}
             </div>
 
             {/* 프로젝트 설명 */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">프로젝트 설명</h3>
-              <p className="text-gray-600 leading-relaxed">{project.description}</p>
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">프로젝트 설명</h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{project.description}</p>
             </div>
 
             {/* 태그 */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">사용 기술</h3>
+            <div className="mb-4 sm:mb-6">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">사용 기술</h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag: any, index: number) => (
                   <span 
                     key={index}
-                    className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm"
                   >
                     {tag}
                   </span>
@@ -80,9 +80,9 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
             {/* 주요 기능 */}
             {project.features && project.features.length > 0 && (
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">주요 기능 및 특징</h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">주요 기능 및 특징</h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
                   {project.features.map((feature: string, index: number) => (
                     <li key={index}>{feature}</li>
                   ))}
@@ -116,8 +116,8 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           </div>
         </div>
 
-        {/* 오른쪽 사이드바 */}
-        <div className="ml-4 flex flex-col gap-4">
+        {/* 오른쪽 사이드바 - 데스크톱에서만 표시 */}
+        <div className="hidden lg:flex lg:ml-4 flex-col gap-4">
           {/* X 버튼 */}
           <button 
             onClick={onClose}
@@ -140,6 +140,14 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </a>
           )}
         </div>
+
+        {/* 모바일 닫기 버튼 - 하단에 고정 */}
+        <button 
+          onClick={onClose}
+          className="lg:hidden fixed bottom-4 right-4 w-12 h-12 bg-[#373737] text-white rounded-full flex items-center justify-center text-lg font-bold hover:bg-[#373737]/40 transition-colors z-50"
+        >
+          ✕
+        </button>
       </div>
     </div>
   );
