@@ -1,45 +1,56 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { projects, FilterType } from '../../constants/projectData';
-import ProjectCard from '../../components/ProjectCard';
+import type { Project } from '../../constants/projectData';
 import ProjectFilter from '../../components/ProjectFilter';
+import ProjectCard from '../../components/ProjectCard';
+import ProjectDetailModal from '../../components/ProjectDetailModal';
 
-function Project() {
+const ProjectPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === 'all') {
-      return projects;
-    }
-    return projects.filter(project => project.category === activeFilter);
-  }, [activeFilter]);
+  const handleProjectClick = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  // 필터링된 프로젝트 목록
+  const filteredProjects = projects.filter((project) => {
+    if (activeFilter === 'all') return true;
+    return project.category === activeFilter;
+  });
 
   return (
     <div className="min-h-screen bg-[#232323] text-white">
       <div className="container mx-auto px-6 py-8">
-        {/* 필터 섹션 */}
         <ProjectFilter 
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
         />
-        
-        {/* 프로젝트 그리드 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              onDetailClick={() => handleProjectClick(project)}
+            />
           ))}
         </div>
-        
-        {/* 프로젝트가 없을 때 */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">
-              해당 카테고리의 프로젝트가 없습니다.
-            </p>
-          </div>
-        )}
+
+        <ProjectDetailModal
+          project={selectedProject}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
       </div>
     </div>
   );
-}
+};
 
-export default Project;
+export default ProjectPage;
