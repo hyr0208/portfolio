@@ -5,14 +5,21 @@ import js from "../../assets/image/icon_javascript.svg";
 import react from "../../assets/image/react.png";
 import tailwind from "../../assets/image/tailwind.png";
 import ts from "../../assets/image/ts.png";
+import ps from "../../assets/image/Photoshop.png"
+import ill from "../../assets/image/illustrator.png"
+import office from "../../assets/image/office.png"
+import accounting from "../../assets/image/accounting.png"
+
 
 function Career() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 mt-[2rem] pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-auto">
-        <div className="bg-[#373737] overflow-y-auto flex flex-col rounded h-[30rem] relative justify-between">
-          <div className="p-5 flex flex-col gap-3 text-white">
-            <span className="text-[14px] text-[#a6a6a6]">
+        
+        <div className="bg-[#373737] p-5 overflow-y-auto flex flex-col rounded h-[30rem] relative justify-between">
+          <div className="flex flex-col gap-3 text-white">
+          <div className="tracking-tighter flex flex-col gap-3">
+          <span className="text-[14px] text-[#a6a6a6]">
               2019.01 - 2021.09
             </span>
             <div className="flex flex-col gap-1">
@@ -20,14 +27,32 @@ function Career() {
               <p className="text-[14px]">@ 컴퓨터자격증 강사</p>
             </div>
 
-            <div className="text-[16px] text-[#a6a6a6]">
-              <li>OA관련 자격증 강의</li>
-              <li>전산회계 및 회계관리 자격증 강의</li>
-              <li>디자인 관련 자격증 강의</li>
-              <li>
-                Photoshop, Illustrator를 활용해 홍보 마케팅, 광고 디자인 작업
-              </li>
+            <div className="text-[16px] text-[#a6a6a6] space-y-2">
+              <div>• OA관련 자격증 강의</div>
+              <div>• 전산회계 및 회계관리 자격증 강의</div>
+              <div>• 디자인 관련 자격증 강의</div>
+              <div>
+                • Photoshop, Illustrator를 활용해 홍보 마케팅, 광고 디자인 작업
+              </div>
             </div>
+
+          </div>
+            
+          </div>
+
+          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4">
+            {[office, accounting, ps, ill].map((icon, idx) => (
+              <div
+                key={idx}
+                className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
+              >
+                <img
+                  src={icon}
+                  alt=""
+                  className="w-[36px] h-[25px] object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
 
@@ -40,20 +65,20 @@ function Career() {
             </div>
 
             <div className="text-[16px] text-[#a6a6a6] space-y-2">
-              <li>저축은행 모바일앱 기획 및 유지보수 작업</li>
-              <li>
-                HTML, CSS, Javascript를 활용한 저축은행 모바일 웹 대출시스템
+              <div>• 저축은행 모바일앱 기획 및 유지보수 작업</div>
+              <div>
+                • HTML, CSS, Javascript를 활용한 저축은행 모바일 웹 대출시스템
                 작업
-              </li>
-              <li>React, Javascript를 활용한 저축은행 모바일 웹 작업</li>
-              <li>(주)오너마인드 랜딩페이지 작업</li>
-              <li>
-                React, Next.js를 활용한 저축은행 디지털 전환 홈페이지 유지보수
+              </div>
+              <div>• React, Javascript를 활용한 저축은행 모바일 웹 작업</div>
+              <div>• (주)오너마인드 랜딩페이지 작업</div>
+              <div>
+                • React, Next.js를 활용한 저축은행 디지털 전환 홈페이지 유지보수
                 작업
-              </li>
-              <li>
-                React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트 작업
-              </li>
+              </div>
+              <div>
+                • React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트 작업
+              </div>
             </div>
           </div>
 
