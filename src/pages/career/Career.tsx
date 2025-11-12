@@ -53,7 +53,7 @@ function Career() {
           </div>
         </div>
 
-        <div className="bg-[#373737] md:w-[600px] p-5 rounded md:h-[30rem] h-[40rem] flex flex-col justify-between overflow-y-auto">
+        <div className="bg-[#373737] md:w-[600px] p-5 rounded md:h-[30rem] h-[40rem] flex flex-col justify-between">
           <div className="tracking-tighter flex flex-col gap-3">
             <span className="text-[14px] text-[#a6a6a6]">2021.11 - 재직중</span>
             <div className="flex flex-col gap-1">
@@ -67,8 +67,12 @@ function Career() {
                 • HTML, CSS, Javascript를 활용한 저축은행 모바일 웹 대출시스템
                 작업
               </div>
-              <div>• React, Javascript를 활용한 저축은행 모바일 웹 작업</div>
-              <div>• (주)오너마인드 랜딩페이지 작업</div>
+              <div>
+                • React, Javascript를 활용한 저축은행 모바일 웹 대출시스템 작업
+              </div>
+              <div>
+                • React, Typescript를 활용한 (주)오너마인드 랜딩페이지 작업
+              </div>
               <div>
                 • React, Next.js를 활용한 저축은행 디지털 전환 홈페이지 유지보수
                 작업
@@ -77,10 +81,13 @@ function Career() {
                 • React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트
                 작업
               </div>
+              <div>
+                • React, Electron을 활용한 저축은행 차세대 시스템 유지보수 작업
+              </div>
             </div>
           </div>
 
-          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4">
+          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4 pt-2">
             {[html, css, js, ts, react, tailwind, electron].map((icon, idx) => (
               <div
                 key={idx}

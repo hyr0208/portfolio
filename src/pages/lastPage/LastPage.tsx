@@ -91,14 +91,13 @@ function LastPage() {
 
         {/* 맨 위로 스크롤 버튼 */}
         <button
-          className="fixed bottom-3 sm:bottom-5 right-3 sm:right-5 bg-white w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] flex items-center justify-center font-bold rounded-full hover:opacity-80 shadow-lg"
+          className="fixed bottom-5 right-5 bg-white w-[50px] h-[50px] flex items-center justify-center font-bold rounded-full hover:opacity-80 shadow-lg"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            className="sm:w-[35px] sm:h-[35px]"
+            width="35"
+            height="35"
             viewBox="0 0 24 26"
           >
             <path
