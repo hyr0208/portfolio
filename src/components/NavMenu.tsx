@@ -21,6 +21,7 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navTabs]);
@@ -39,7 +40,7 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
             <button
               onClick={tab.scrollToTarget}
               className={`
-                text-2xl md:text-5xl font-medium transition-all duration-300 ease-in-out
+                text-2xl md:text-6xl font-medium transition-all duration-300 ease-in-out
                 ${
                   tab.isTarget
                     ? "text-white opacity-100"

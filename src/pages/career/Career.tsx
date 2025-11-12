@@ -5,39 +5,36 @@ import js from "../../assets/image/icon_javascript.svg";
 import react from "../../assets/image/react.png";
 import tailwind from "../../assets/image/tailwind.png";
 import ts from "../../assets/image/ts.png";
-import ps from "../../assets/image/Photoshop.png"
-import ill from "../../assets/image/illustrator.png"
-import office from "../../assets/image/office.png"
-import accounting from "../../assets/image/accounting.png"
-
+import ps from "../../assets/image/Photoshop.png";
+import ill from "../../assets/image/illustrator.png";
+import office from "../../assets/image/office.png";
+import accounting from "../../assets/image/accounting.png";
 
 function Career() {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 mt-[2rem] pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-auto">
-        
+      <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-auto">
         <div className="bg-[#373737] p-5 overflow-y-auto flex flex-col rounded h-[30rem] relative justify-between">
           <div className="flex flex-col gap-3 text-white">
-          <div className="tracking-tighter flex flex-col gap-3">
-          <span className="text-[14px] text-[#a6a6a6]">
-              2019.01 - 2021.09
-            </span>
-            <div className="flex flex-col gap-1">
-              <p className="text-[24px]">하나컴퓨터학원</p>
-              <p className="text-[14px]">@ 컴퓨터자격증 강사</p>
-            </div>
+            <div className="tracking-tighter flex flex-col gap-3">
+              <span className="text-[14px] text-[#a6a6a6]">
+                2019.01 - 2021.09
+              </span>
+              <div className="flex flex-col gap-1">
+                <p className="text-[24px]">하나컴퓨터학원</p>
+                <p className="text-[14px]">@ 컴퓨터자격증 강사</p>
+              </div>
 
-            <div className="text-[16px] text-[#a6a6a6] space-y-2">
-              <div>• OA관련 자격증 강의</div>
-              <div>• 전산회계 및 회계관리 자격증 강의</div>
-              <div>• 디자인 관련 자격증 강의</div>
-              <div>
-                • Photoshop, Illustrator를 활용해 홍보 마케팅, 광고 디자인 작업
+              <div className="text-[16px] text-[#a6a6a6] space-y-2">
+                <div>• OA관련 자격증 강의</div>
+                <div>• 전산회계 및 회계관리 자격증 강의</div>
+                <div>• 디자인 관련 자격증 강의</div>
+                <div>
+                  • Photoshop, Illustrator를 활용해 홍보 마케팅, 광고 디자인
+                  작업
+                </div>
               </div>
             </div>
-
-          </div>
-            
           </div>
 
           <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4">
@@ -77,7 +74,8 @@ function Career() {
                 작업
               </div>
               <div>
-                • React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트 작업
+                • React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트
+                작업
               </div>
             </div>
           </div>
