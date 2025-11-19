@@ -23,14 +23,14 @@ function MainProfile() {
         </div>
 
         {/* 방문자 수 표시 */}
-        <div className="absolute md:top-14 top-5 md:right-20 right-5 z-10">
+        {/* <div className="absolute md:top-14 top-5 md:right-20 right-5 z-10">
           <p className="text-gray-600 text-sm md:text-base font-normal bg-white/40 py-2 px-4 rounded-full">
             Today{" "}
             <span className="font-medium">
               {isLoading ? "..." : visitorCount.toLocaleString()}
             </span>
           </p>
-        </div>
+        </div> */}
 
         <img
           src={BackGroundImage}
