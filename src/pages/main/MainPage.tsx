@@ -26,23 +26,20 @@ function MainPage() {
       {/* 네비게이션 메뉴 */}
 
       {/* 콘텐츠 영역 */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <NavMenu navTabs={navTabs} />
         <div className="flex-1 md:ml-[300px] pt-16 md:pt-0">
           <section id="Career">
             <div
               ref={careerSection.targetRef}
-              className="pt-32 md:pt-20 px-6 md:px-11 flex items-center justify-end"
+              className="pt-12 md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
             >
               <Career />
             </div>
           </section>
 
           <section id="Project">
-            <div
-              ref={projectSection.targetRef}
-              className="min-h-screen"
-            >
+            <div ref={projectSection.targetRef} className="min-h-screen">
               <ProjectPage />
             </div>
           </section>

@@ -15,7 +15,7 @@ function useScrollToTarget(id: string) {
       {
         root: null,
         threshold: [0.1, 0.5], // 요소가 10%~50% 정도 보일 때 감지
-        rootMargin: "-10% 0px" // 화면 상단 부근에서 감지하도록 설정
+        rootMargin: "-10% 0px", // 화면 상단 부근에서 감지하도록 설정
       }
     );
 
@@ -24,9 +24,23 @@ function useScrollToTarget(id: string) {
   }, [id]);
 
   const scrollToTarget = () => {
-    targetRef.current?.scrollIntoView({
+    const el = targetRef.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const mobileOffset =
+      window.innerWidth < 768
+        ? Math.max(
+            (document.querySelector("nav")?.getBoundingClientRect().height ??
+              0) - 16,
+            0
+          )
+        : 0;
+
+    window.scrollTo({
+      top: rect.top + scrollTop - mobileOffset,
       behavior: "smooth",
-      block: "center", // 화면 중앙으로 오게
     });
   };
 
