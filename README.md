@@ -1,6 +1,6 @@
 # 🎨 Portfolio Website
 
-프론트엔드 개발자 한예린의 포트폴리오 웹사이트입니다.
+프론트엔드 개발자 yyyerin의 포트폴리오 웹사이트입니다.
 
 ![Portfolio](https://img.shields.io/badge/Portfolio-yyyerin.co.kr-61DAFB?style=flat-square&logo=react)
 ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat-square&logo=react)
