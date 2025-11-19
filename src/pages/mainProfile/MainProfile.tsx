@@ -1,8 +1,11 @@
 import BackGroundImage from "../../assets/image/front_bg.jpg";
 import yerinImage from "../../assets/image/yerin.png";
 import Tooltip from "../../components/ToolTip";
+import { useVisitorCount } from "../../hooks/useVisitorCount";
 
 function MainProfile() {
+  const { visitorCount, isLoading } = useVisitorCount();
+
   return (
     <div>
       <div className="relative h-screen overflow-hidden">
@@ -17,6 +20,16 @@ function MainProfile() {
               GitHub
             </a>
           </Tooltip>
+        </div>
+
+        {/* 방문자 수 표시 */}
+        <div className="absolute md:top-14 top-5 md:right-20 right-5 z-10">
+          <p className="text-gray-600 text-sm md:text-base font-normal bg-white/40 py-2 px-4 rounded-full">
+            Today{" "}
+            <span className="font-medium">
+              {isLoading ? "..." : visitorCount.toLocaleString()}
+            </span>
+          </p>
         </div>
 
         <img
