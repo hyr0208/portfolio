@@ -47,7 +47,7 @@ function MainProfile() {
         />
 
         <div className="absolute inset-0 text-center w-full pt-10 translate-y-[60px]">
-          <p className="text-[40px] md:text-[80px] text-white/90 font-medium tracking-tight leading-none">
+          <p className="text-[40px] md:text-[80px] text-white/90 font-normal tracking-tight leading-none">
             Front-End Developer
           </p>
           <p className="absolute top-[8%] md:top-[10%] left-1/2 -translate-x-1/2 text-[26px] md:text-[50px] text-black font-normal leading-none">
