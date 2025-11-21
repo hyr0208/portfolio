@@ -25,15 +25,14 @@ function Career() {
                 <p className="text-[14px]">@ 컴퓨터자격증 강사</p>
               </div>
 
-              <div className="text-[16px] text-[#a6a6a6] space-y-2">
-                <div>• OA관련 자격증 강의</div>
-                <div>• 전산회계 및 회계관리 자격증 강의</div>
-                <div>• 디자인 관련 자격증 강의</div>
-                <div>
-                  • Photoshop, Illustrator를 활용해 홍보 마케팅, 광고 디자인
-                  작업
-                </div>
-              </div>
+              <ul className="text-[16px] text-[#a6a6a6] space-y-2 list-disc list-outside pl-5">
+                <li>OA관련 자격증 강의</li>
+                <li>전산회계 및 회계관리 자격증 강의</li>
+                <li>디자인 관련 자격증 강의</li>
+                <li>
+                  Photoshop, Illustrator를 활용해 홍보 마케팅, 광고 디자인 작업
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -61,33 +60,30 @@ function Career() {
               <p className="text-[14px]">@ 프로젝트팀 - 프론트엔드 웹 개발</p>
             </div>
 
-            <div className="text-[16px] text-[#a6a6a6] space-y-2">
-              <div>• 저축은행 모바일앱 기획 및 유지보수 작업</div>
-              <div>
-                • HTML, CSS, Javascript를 활용한 저축은행 모바일 웹 대출시스템
+            <ul className="text-[16px] text-[#a6a6a6] space-y-2 list-disc list-outside pl-5">
+              <li>저축은행 모바일앱 기획 및 유지보수 작업</li>
+              <li>
+                HTML, CSS, Javascript를 활용한 저축은행 모바일 웹 대출시스템
                 작업
-              </div>
-              <div>
-                • React, Javascript를 활용한 저축은행 모바일 웹 대출시스템 작업
-              </div>
-              <div>
-                • React, Typescript를 활용한 (주)오너마인드 랜딩페이지 작업
-              </div>
-              <div>
-                • React, Next.js를 활용한 저축은행 디지털 전환 홈페이지 유지보수
+              </li>
+              <li>
+                React, Javascript를 활용한 저축은행 모바일 웹 대출시스템 작업
+              </li>
+              <li>React, Typescript를 활용한 (주)오너마인드 랜딩페이지 작업</li>
+              <li>
+                React, Next.js를 활용한 저축은행 디지털 전환 홈페이지 유지보수
                 작업
-              </div>
-              <div>
-                • React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트
-                작업
-              </div>
-              <div>
-                • React, Electron을 활용한 저축은행 차세대 시스템 유지보수 작업
-              </div>
-            </div>
+              </li>
+              <li>
+                React, Javascript를 활용한 저축은행 차세대 시스템 프로젝트 작업
+              </li>
+              <li>
+                React, Electron을 활용한 저축은행 차세대 시스템 유지보수 작업
+              </li>
+            </ul>
           </div>
 
-          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4 pt-2">
+          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4 pt-4">
             {[html, css, js, ts, react, tailwind, electron].map((icon, idx) => (
               <div
                 key={idx}

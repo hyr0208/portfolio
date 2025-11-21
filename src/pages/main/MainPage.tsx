@@ -66,11 +66,11 @@ function MainPage() {
       {/* 콘텐츠 영역 */}
       <div className="flex flex-col md:flex-row">
         <NavMenu navTabs={navTabs} />
-        <div className="flex-1 md:ml-[300px] pt-16 md:pt-0">
+        <div className="flex-1 md:ml-[300px] md:pt-0">
           <section id="Career">
             <div
               ref={careerSection.targetRef}
-              className="pt-12 md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
+              className="md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
             >
               <Career />
             </div>
