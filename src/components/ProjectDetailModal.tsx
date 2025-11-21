@@ -30,7 +30,15 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="flex flex-col lg:flex-row w-full max-w-6xl max-h-[90vh] lg:max-h-[95vh]">
+      <div className="flex flex-col lg:flex-row w-full max-w-6xl max-h-[90vh] lg:max-h-[95vh] relative mt-12 lg:mt-0">
+        {/* 모바일 닫기 버튼 - 모달 위에 표시 (겹치지 않게) */}
+        <button
+          onClick={onClose}
+          className="lg:hidden absolute -top-12 right-0 w-10 h-10 bg-[#373737] text-white rounded-full flex items-center justify-center text-base font-bold hover:bg-[#373737]/40 transition-colors z-[60] shadow-lg"
+        >
+          ✕
+        </button>
+
         {/* 메인 모달 */}
         <div className="bg-white rounded-md w-full overflow-y-auto">
           {/* 헤더 */}
@@ -159,14 +167,6 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </a>
           )}
         </div>
-
-        {/* 모바일 닫기 버튼 - 하단에 고정 */}
-        <button
-          onClick={onClose}
-          className="lg:hidden fixed bottom-4 right-4 w-12 h-12 bg-[#373737] text-white rounded-full flex items-center justify-center text-lg font-bold hover:bg-[#373737]/40 transition-colors z-50"
-        >
-          ✕
-        </button>
       </div>
     </div>
   );
