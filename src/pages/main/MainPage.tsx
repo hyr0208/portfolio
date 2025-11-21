@@ -103,7 +103,9 @@ function MainPage() {
       {showScrollButton && (
         <div
           className={`fixed bottom-5 right-5 z-50 flex flex-col gap-3 items-center transition-all duration-300 ${
-            isModalOpen ? "blur-sm opacity-50 pointer-events-none" : ""
+            isModalOpen
+              ? "lg:blur-sm lg:opacity-50 opacity-0 pointer-events-none"
+              : ""
           }`}
         >
           {/* GitHub 버튼 */}
