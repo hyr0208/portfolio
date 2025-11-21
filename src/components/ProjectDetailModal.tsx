@@ -14,12 +14,15 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.body.classList.add("modal-open");
     } else {
       document.body.style.overflow = "unset";
+      document.body.classList.remove("modal-open");
     }
 
     return () => {
       document.body.style.overflow = "unset";
+      document.body.classList.remove("modal-open");
     };
   }, [isOpen]);
 
