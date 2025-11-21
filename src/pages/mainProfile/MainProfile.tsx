@@ -22,7 +22,7 @@ function MainProfile() {
           </Tooltip>
           <Tooltip text="이메일 보내기" position="bottom">
             <a
-              href="hhyr0208@gmail.com"
+              href="mailto:hhyr0208@gmail.com"
               className="relative flex gap-1 items-center flex-col z-20 font-normal py-1 px-2 transition-all ease-in-out duration-[0.3s] hover:text-[#fff] text-black after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:z-[-1] after:w-full after:h-1 after:bg-black after:block after:transition-all after:ease-in-out after:duration-[0.3s] hover:after:h-full"
             >
               Email
