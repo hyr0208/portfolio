@@ -12,6 +12,7 @@ function MainPage() {
   const careerSection = useScrollToTarget("Career");
   const projectSection = useScrollToTarget("Project");
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navTabs = [careerSection, projectSection];
 
@@ -34,6 +35,24 @@ function MainPage() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkModalState = () => {
+      setIsModalOpen(document.body.classList.contains("modal-open"));
+    };
+
+    // MutationObserver를 사용하여 body 클래스 변경 감지
+    const observer = new MutationObserver(checkModalState);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    // 초기 상태 확인
+    checkModalState();
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -82,7 +101,11 @@ function MainPage() {
 
       {/* 맨 위로 스크롤 버튼 및 소셜 링크 - 첫 페이지를 넘어갔을 때만 표시 */}
       {showScrollButton && (
-        <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3 items-center">
+        <div
+          className={`fixed bottom-5 right-5 z-50 flex flex-col gap-3 items-center transition-all duration-300 ${
+            isModalOpen ? "blur-sm opacity-50" : ""
+          }`}
+        >
           {/* GitHub 버튼 */}
           <a
             href="https://github.com/hyr0208"
