@@ -66,11 +66,11 @@ function MainPage() {
       {/* 콘텐츠 영역 */}
       <div className="flex flex-col md:flex-row">
         <NavMenu navTabs={navTabs} />
-        <div className="flex-1 md:ml-[300px] pt-16 md:pt-0">
+        <div className="flex-1 md:ml-[300px] md:pt-0">
           <section id="Career">
             <div
               ref={careerSection.targetRef}
-              className="pt-12 md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
+              className="md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
             >
               <Career />
             </div>
@@ -103,7 +103,9 @@ function MainPage() {
       {showScrollButton && (
         <div
           className={`fixed bottom-5 right-5 z-50 flex flex-col gap-3 items-center transition-all duration-300 ${
-            isModalOpen ? "blur-sm opacity-50" : ""
+            isModalOpen
+              ? "lg:blur-sm lg:opacity-50 opacity-0 pointer-events-none"
+              : ""
           }`}
         >
           {/* GitHub 버튼 */}
@@ -138,7 +140,7 @@ function MainPage() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="black"
-              strokeWidth="2"
+              strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
             >

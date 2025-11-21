@@ -50,16 +50,16 @@ function MainProfile() {
           <p className="text-[40px] md:text-[80px] text-white/90 font-normal tracking-tight leading-none">
             Front-End Developer
           </p>
-          <p className="absolute top-[9%] md:top-[10%] left-1/2 -translate-x-1/2 text-[26px] md:text-[50px] text-black font-normal leading-none">
+          <p className="absolute top-[8%] md:top-[10%] left-1/2 -translate-x-1/2 text-[26px] md:text-[50px] text-black font-normal leading-none">
             <span className="typing">프론트엔드 개발자</span>
           </p>
         </div>
 
-        <div className="absolute inset-0 flex items-end justify-center translate-y-[60px]">
+        <div className="absolute inset-0 flex items-end justify-center translate-y-[60px] ">
           <img
             src={yerinImage}
             alt=""
-            className="w-[500px] md:w-[650px] h-[700px] md:h-[900px] object-cover"
+            className="w-[500px] md:w-[650px] h-[700px] md:h-[900px] object-cover "
           />
         </div>
       </div>

@@ -9,6 +9,7 @@ import ts from "../../assets/image/ts.png";
 import github from "../../assets/image/icon_github.svg";
 import discord from "../../assets/image/icon_discord.svg";
 import figma from "../../assets/image/icon_figma.svg";
+import zeplin from "../../assets/image/zeplin.png";
 
 function AboutMe() {
   return (
@@ -67,7 +68,7 @@ function AboutMe() {
                 </div>
 
                 <div className="flex flex-wrap md:gap-3 gap-2">
-                  {[github, discord, figma].map((icon, idx) => (
+                  {[github, discord, figma, zeplin].map((icon, idx) => (
                     <div
                       key={idx}
                       className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
