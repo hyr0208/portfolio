@@ -35,23 +35,31 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
       } w-full md:fixed md:left-0 md:h-screen md:w-[300px] 2xl:left-[calc((100vw-1600px)/2)]`}
     >
       <ul className="flex justify-center md:flex-col gap-4 md:gap-6 items-center md:items-start">
-        {navTabs.map((tab) => (
-          <li key={tab.targetName}>
-            <button
-              onClick={tab.scrollToTarget}
-              className={`
-                text-2xl md:text-6xl font-medium transition-all duration-300 ease-in-out
-                ${
-                  tab.isTarget
-                    ? "text-white opacity-100"
-                    : "text-white opacity-40 hover:opacity-100"
-                }
-              `}
-            >
-              {tab.targetName === "Career" ? "Career" : tab.targetName}
-            </button>
-          </li>
-        ))}
+        {navTabs.map((tab) => {
+          const displayName =
+            tab.targetName === "Career"
+              ? "Career"
+              : tab.targetName === "Certification"
+              ? "Cert."
+              : tab.targetName;
+          return (
+            <li key={tab.targetName}>
+              <button
+                onClick={tab.scrollToTarget}
+                className={`
+                  text-2xl md:text-6xl font-medium transition-all duration-300 ease-in-out whitespace-nowrap
+                  ${
+                    tab.isTarget
+                      ? "text-white opacity-100"
+                      : "text-white opacity-40 hover:opacity-100"
+                  }
+                `}
+              >
+                {displayName}
+              </button>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
