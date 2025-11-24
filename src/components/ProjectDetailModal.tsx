@@ -196,20 +196,6 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               </div>
             )}
 
-            {/* 특징 */}
-            {project.features && project.features.length > 0 && (
-              <div className="mb-4 sm:mb-6">
-                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
-                  특징
-                </h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
-                  {project.features.map((feature: string, index: number) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
             {/* 링크 */}
             {/* <div className="flex gap-4">
               {project.githubUrl && (

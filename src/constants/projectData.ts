@@ -17,8 +17,7 @@ export interface Project {
   githubUrl?: string;
   siteUrl?: string;
   detailUrl?: string;
-  mainFeatures?: string[]; // 주요 기능 (기술적인 내용)
-  features?: string[]; // 특징
+  mainFeatures?: string[]; // 주요 기능
 }
 
 export const projects: Project[] = [
@@ -43,24 +42,20 @@ export const projects: Project[] = [
     type: "publishing",
     duration: "long-term",
     detailUrl: "modal",
-    // siteUrl: "https://riderlink.co.kr/",
     mainFeatures: [
       "보안 폐쇄망 환경에서 yarn offline 캐시를 활용한 React 개발 환경 구축 및 배포",
       "RealGrid 샘플 코드를 분석하여, 중도금 대출 사용자 관리를 위한 스프레드시트 기능(필터, 엑셀 다운로드, 더블 클릭 등)을 Custom Hook으로 모듈화하고, 공통 로직을 추출하여 재사용 가능한 컴포넌트 형태로 구현",
-      "300여개의 테스트 케이스를 포함한 커스텀 Hook 단위 테스트 작성",
-    ],
-    features: [
-      "보안 폐쇄망 환경에 최적화된 안정적인 시스템 운영",
       "RealGrid를 활용한 강력한 스프레드시트 기능 제공",
-      "대량의 데이터를 효율적으로 관리할 수 있는 사용자 친화적 인터페이스",
-      "Electron 기반의 데스크톱 애플리케이션으로 안정적인 사용자 경험",
+      "Electron을 활용한 데스크톱 애플리케이션 빌드 및 배포 프로세스 구축",
+      "보안 폐쇄망 환경에 최적화된 안정적인 시스템 운영",
+      "대량의 데이터를 효율적으로 처리하기 위한 가상화 및 페이징 기능 구현",
     ],
   },
   {
     id: 2,
     title: "스마트저축은행 차세대 시스템 구축",
     description:
-      "스마트저축은행 차세대 시스템 구축 프로젝트에서 공통부를 담당하여 개발했습니다.\n보안 폐쇄망 환경에서 React 기반의 공통 컴포넌트 라이브러리를 구축하고, Storybook을 활용한 컴포넌트 문서화 및 테스트 환경을 구축했습니다. RealGrid와 RealReport를 활용한 데이터 그리드 및 리포트 기능을 제공하며, 수십 개의 재사용 가능한 공통 컴포넌트를 개발하여 프로젝트 전반의 개발 효율성을 향상시켰습니다.",
+      "스마트저축은행 차세대 시스템 구축 프로젝트에서 공통부를 담당하여 개발했습니다.\n보안 폐쇄망 환경에서 React 기반의 공통 컴포넌트 라이브러리를 구축하고, Storybook을 활용한 컴포넌트 문서화 및 테스트 환경을 구축했습니다. RealGrid와 RealReport를 활용한 데이터 그리드 및 리포트 기능을 제공하며, 20여개의 재사용 가능한 공통 컴포넌트를 개발하여 프로젝트 전반의 개발 효율성을 향상시켰습니다.",
     image: smartBankImage,
     tags: ["팀", "웹"],
     technologies: [
@@ -78,21 +73,15 @@ export const projects: Project[] = [
     type: "publishing",
     duration: "long-term",
     detailUrl: "modal",
-    // siteUrl: "https://riderlink.co.kr/",
     mainFeatures: [
       "보안 폐쇄망 환경에서 React와 TypeScript를 활용한 개발 환경 구축 및 배포",
-      "Storybook을 활용한 공통 컴포넌트 문서화 및 시각적 테스트 환경 구축",
-      "수십 개의 재사용 가능한 공통 컴포넌트 개발 및 모듈화",
-      "RealGrid와 RealReport를 활용한 데이터 그리드 및 리포트 기능 구현",
       "TypeScript와 React Query를 활용한 타입 안정성 및 서버 상태 관리",
+      "20여개의 재사용 가능한 공통 컴포넌트 개발 및 모듈화",
       "Zustand를 활용한 전역 상태 관리 및 컴포넌트 간 데이터 공유",
-    ],
-    features: [
-      "보안 폐쇄망 환경에 최적화된 안정적인 시스템 운영",
-      "공통 컴포넌트 라이브러리를 통한 개발 생산성 향상 및 일관된 UI/UX 제공",
-      "Storybook을 통한 컴포넌트 독립적 개발 및 테스트 환경 구축",
-      "RealGrid와 RealReport를 활용한 강력한 데이터 시각화 및 리포트 기능",
-      "재사용 가능한 컴포넌트 구조로 유지보수성 및 확장성 향상",
+      "재사용 가능한 컴포넌트 구조 설계 및 Props 인터페이스 표준화",
+      "공통 컴포넌트 라이브러리 구조 설계 및 npm 패키지 형태로 배포",
+      "Storybook을 활용한 공통 컴포넌트 문서화 및 시각적 테스트 환경 구축",
+      "RealGrid와 RealReport API를 활용한 데이터 바인딩 및 리포트 생성 로직 구현",
     ],
   },
   {
@@ -110,16 +99,14 @@ export const projects: Project[] = [
     siteUrl: "https://ownermind.co.kr/",
     mainFeatures: [
       "React와 TypeScript를 활용한 타입 안정성 확보",
+      "React.memo 및 useMemo를 활용한 렌더링 성능 최적화",
       "Tailwind CSS를 사용한 유지보수 가능한 스타일링",
+      "반응형 디자인을 위한 미디어 쿼리 및 Tailwind CSS 브레이크포인트 활용",
       "컴포넌트 재사용성을 고려한 모듈화된 구조",
       "반응형 레이아웃 구현 및 크로스 브라우저 호환성",
-      "SEO 최적화 및 성능 최적화 적용",
-    ],
-    features: [
-      "직관적이고 사용자 친화적인 인터페이스",
-      "모던한 디자인과 브랜드 아이덴티티 반영",
-      "모바일, 태블릿, 데스크톱 등 모든 디바이스에서 최적화",
-      "빠른 페이지 로딩 속도와 부드러운 사용자 경험",
+      "SEO 최적화를 위한 메타 태그 및 Open Graph 설정",
+      "성능 최적화를 위한 코드 스플리팅 및 레이지 로딩 적용",
+      "이미지 최적화 및 WebP 포맷 변환을 통한 로딩 속도 개선",
     ],
   },
   {
@@ -138,15 +125,12 @@ export const projects: Project[] = [
     mainFeatures: [
       "React와 TypeScript를 활용한 컴포넌트 기반 개발",
       "Tailwind CSS를 사용한 반응형 디자인 구현",
+      "Axios를 활용한 HTTP 클라이언트 설정 및 인터셉터 구현",
       "SEO 최적화를 위한 메타 태그 및 구조화된 마크업",
       "성능 최적화를 위한 코드 스플리팅 및 이미지 최적화",
       "다양한 화면 크기에 대응하는 반응형 레이아웃",
-    ],
-    features: [
-      "직관적이고 모던한 사용자 인터페이스",
-      "브랜드 아이덴티티를 반영한 일관된 디자인 시스템",
-      "빠른 페이지 로딩 속도와 부드러운 사용자 경험",
-      "모바일, 태블릿, 데스크톱 등 모든 디바이스에서 최적화된 화면",
+      "CSS Grid와 Flexbox를 활용한 반응형 레이아웃 구조 설계",
+      "이미지 최적화 및 레이지 로딩을 통한 초기 로딩 속도 개선",
     ],
   },
   {
@@ -166,13 +150,11 @@ export const projects: Project[] = [
       "Tailwind CSS를 사용한 유틸리티 기반 스타일링",
       "React Router를 통한 라우팅 및 스크롤 기반 네비게이션",
       "Intersection Observer API를 활용한 섹션 감지 및 하이라이트",
+      "커스텀 훅(useScrollToTarget)을 통한 스크롤 위치 추적 및 네비게이션 상태 관리",
+      "GitHub API 연동을 통한 외부 링크 처리 및 새 창 열기 구현",
       "모달 컴포넌트를 통한 프로젝트 상세 정보 표시",
-    ],
-    features: [
-      "패드백을 수용하고, 지속적으로 개선 중",
-      "메인 화면, 마지막 화면에서 github 바로가기",
-      "소개 - 커리어 - 프로젝트 순으로 표시",
-      "프로젝트 '자세히보기' 버튼 클릭 시 상세 정보 표시",
+      "섹션별 스크롤 위치 계산 및 자동 스크롤 기능 구현",
+      "모달 상태 관리 및 body 스크롤 잠금 기능 구현",
     ],
   },
   {
@@ -190,16 +172,13 @@ export const projects: Project[] = [
     detailUrl: "modal",
     mainFeatures: [
       "React와 JavaScript를 활용한 동적 UI 구현",
+      "React Hooks(useState, useEffect)를 활용한 상태 관리",
       "Tailwind CSS를 사용한 반응형 디자인",
+      "CSS 애니메이션 및 Tailwind CSS transition 유틸리티를 활용한 인터랙션 구현",
       "컴포넌트 기반 아키텍처로 재사용성 향상",
-      "애니메이션 및 인터랙션 효과 구현",
       "상태 관리 및 이벤트 핸들링 최적화",
-    ],
-    features: [
-      "직관적이고 재미있는 사용자 인터페이스",
-      "부드러운 애니메이션과 인터랙션 효과",
-      "모바일, 태블릿, 데스크톱 등 모든 디바이스에서 최적화",
-      "모던한 디자인과 브랜드 아이덴티티 반영",
+      "반응형 디자인을 위한 미디어 쿼리 및 모바일 퍼스트 접근 방식 적용",
+      "컴포넌트 Props 인터페이스 설계 및 타입 안정성 확보",
     ],
   },
 ];
