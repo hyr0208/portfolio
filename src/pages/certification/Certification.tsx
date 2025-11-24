@@ -39,7 +39,7 @@ function Certification() {
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="bg-[#373737] p-5 rounded-lg flex flex-col gap-3 hover:bg-[#404040] transition-colors duration-200"
+              className="bg-[#373737] p-4 md:p-5 rounded-lg flex flex-col gap-3 hover:bg-[#404040] transition-colors duration-200"
             >
               {/* 자격증 이미지 */}
               {cert.image && (
@@ -52,12 +52,12 @@ function Certification() {
                 </div>
               )}
 
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <h3 className="text-white text-lg md:text-xl font-semibold mb-1">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-white text-lg md:text-xl font-semibold mb-1 break-words">
                     {cert.name}
                   </h3>
-                  <p className="text-[#a6a6a6] text-sm md:text-base">
+                  <p className="text-[#a6a6a6] text-sm md:text-base break-words">
                     {cert.issuer}
                   </p>
                 </div>

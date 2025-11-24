@@ -40,9 +40,9 @@ const ProjectCardOverlay: React.FC<ProjectCardOverlayProps> = ({
   };
 
   return (
-    <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center rounded-lg transition-all duration-300">
-      <h3 className="text-white font-bold text-xl mb-6">{title}</h3>
-      <div className="flex flex-col gap-3">
+    <div className="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center rounded-lg transition-all duration-300 px-4">
+      <h3 className="text-white font-bold text-xl mb-6 text-center px-2 break-words">{title}</h3>
+      <div className="flex flex-col gap-3 w-full max-w-[200px]">
         {detailUrl && (
           <button 
             onClick={handleDetailClick}
