@@ -109,32 +109,9 @@ export const projects: Project[] = [
       "이미지 최적화 및 WebP 포맷 변환을 통한 로딩 속도 개선",
     ],
   },
+
   {
     id: 4,
-    title: "라이더링크 랜딩페이지",
-    description:
-      "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
-    image: riderlinkImage,
-    tags: ["팀", "반응형", "사이드"],
-    technologies: ["react", "ts", "tailwind", "axios", "github"],
-    category: "team",
-    type: "publishing",
-    duration: "side",
-    detailUrl: "modal",
-    siteUrl: "https://riderlink.co.kr/",
-    mainFeatures: [
-      "React와 TypeScript를 활용한 컴포넌트 기반 개발",
-      "Tailwind CSS를 사용한 반응형 디자인 구현",
-      "Axios를 활용한 HTTP 클라이언트 설정 및 인터셉터 구현",
-      "SEO 최적화를 위한 메타 태그 및 구조화된 마크업",
-      "성능 최적화를 위한 코드 스플리팅 및 이미지 최적화",
-      "다양한 화면 크기에 대응하는 반응형 레이아웃",
-      "CSS Grid와 Flexbox를 활용한 반응형 레이아웃 구조 설계",
-      "이미지 최적화 및 레이지 로딩을 통한 초기 로딩 속도 개선",
-    ],
-  },
-  {
-    id: 5,
     title: "포트폴리오 사이트",
     description: "저만의 포트폴리오를 만들기위해 제작한 사이트입니다.",
     image: "/images/portfolio.webp",
@@ -158,7 +135,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 5,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -179,6 +156,30 @@ export const projects: Project[] = [
       "상태 관리 및 이벤트 핸들링 최적화",
       "반응형 디자인을 위한 미디어 쿼리 및 모바일 퍼스트 접근 방식 적용",
       "컴포넌트 Props 인터페이스 설계 및 타입 안정성 확보",
+    ],
+  },
+  {
+    id: 6,
+    title: "라이더링크 랜딩페이지",
+    description:
+      "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
+    image: riderlinkImage,
+    tags: ["팀", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "axios", "github"],
+    category: "team",
+    type: "publishing",
+    duration: "side",
+    detailUrl: "modal",
+    siteUrl: "https://riderlink.co.kr/",
+    mainFeatures: [
+      "React와 TypeScript를 활용한 컴포넌트 기반 개발",
+      "Tailwind CSS를 사용한 반응형 디자인 구현",
+      "Axios를 활용한 HTTP 클라이언트 설정 및 인터셉터 구현",
+      "SEO 최적화를 위한 메타 태그 및 구조화된 마크업",
+      "성능 최적화를 위한 코드 스플리팅 및 이미지 최적화",
+      "다양한 화면 크기에 대응하는 반응형 레이아웃",
+      "CSS Grid와 Flexbox를 활용한 반응형 레이아웃 구조 설계",
+      "이미지 최적화 및 레이지 로딩을 통한 초기 로딩 속도 개선",
     ],
   },
 ];
