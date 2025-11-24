@@ -92,6 +92,8 @@ portfolio/
 │   │   └── ...
 │   ├── constants/      # 상수 데이터
 │   │   ├── projectData.ts
+│   │   ├── certificationData.ts
+│   │   ├── educationData.ts
 │   │   └── imageData.ts
 │   ├── hooks/          # 커스텀 훅
 │   │   ├── useScrollToTarget.tsx
@@ -101,6 +103,8 @@ portfolio/
 │   │   ├── aboutMe/
 │   │   ├── career/
 │   │   ├── project/
+│   │   ├── certification/
+│   │   ├── education/
 │   │   └── lastPage/
 │   ├── routes/         # 라우팅 설정
 │   └── App.tsx
@@ -114,7 +118,9 @@ portfolio/
 2. **About Me**: 자기소개 및 기술 스택
 3. **Career**: 경력 및 경험
 4. **Project**: 프로젝트 포트폴리오
-5. **Last Page**: 마무리 페이지
+5. **Certification**: 자격증 목록
+6. **Education**: 학력 정보
+7. **Last Page**: 마무리 페이지
 
 ## 🚀 배포
 
