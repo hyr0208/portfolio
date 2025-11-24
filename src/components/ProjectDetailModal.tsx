@@ -113,10 +113,10 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 sm:h-64 object-cover rounded-lg"
+                  className="w-full h-72 sm:h-96 md:h-[28rem] object-cover rounded-lg"
                 />
               ) : (
-                <div className="w-full h-48 sm:h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                <div className="w-full h-72 sm:h-96 md:h-[28rem] bg-gray-200 rounded-lg flex items-center justify-center">
                   <span className="text-gray-500 text-sm sm:text-base">
                     이미지 없음
                   </span>
