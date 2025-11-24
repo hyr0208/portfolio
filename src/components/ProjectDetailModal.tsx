@@ -1,4 +1,43 @@
 import React, { useEffect } from "react";
+import html from "../assets/image/icon_html.svg";
+import css from "../assets/image/icon_css.svg";
+import js from "../assets/image/icon_javascript.svg";
+import ts from "../assets/image/ts.png";
+import react from "../assets/image/react.png";
+import tailwind from "../assets/image/tailwind.png";
+import electron from "../assets/image/electron.png";
+import github from "../assets/image/icon_github.svg";
+import figma from "../assets/image/icon_figma.svg";
+import zeplin from "../assets/image/zeplin.png";
+import Tooltip from "./ToolTip";
+
+// 기술 이름을 아이콘 경로로 매핑
+const technologyIcons: { [key: string]: string } = {
+  html,
+  css,
+  js,
+  ts,
+  react,
+  tailwind,
+  electron,
+  github,
+  figma,
+  zeplin,
+};
+
+// 기술 이름을 한글로 매핑
+const technologyNames: { [key: string]: string } = {
+  html: "HTML5",
+  css: "CSS3",
+  js: "JavaScript",
+  ts: "TypeScript",
+  react: "React",
+  tailwind: "Tailwind CSS",
+  electron: "Electron",
+  github: "GitHub",
+  figma: "Figma",
+  zeplin: "Zeplin",
+};
 
 interface ProjectDetailModalProps {
   project: any | null;
@@ -86,10 +125,36 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               </p>
             </div>
 
+            {/* 사용 기술 */}
+            {project.technologies && project.technologies.length > 0 && (
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
+                  사용 기술
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {project.technologies.map((tech: string, index: number) => {
+                    const icon = technologyIcons[tech.toLowerCase()];
+                    const name = technologyNames[tech.toLowerCase()] || tech;
+                    return icon ? (
+                      <Tooltip key={index} text={name} position="top">
+                        <div className="w-[50px] h-[50px] p-0.5 rounded-xl flex flex-col justify-center items-center shrink-0 hover:bg-gray-100 transition-colors cursor-pointer">
+                          <img
+                            src={icon}
+                            alt={name}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      </Tooltip>
+                    ) : null;
+                  })}
+                </div>
+              </div>
+            )}
+
             {/* 태그 */}
             <div className="mb-4 sm:mb-6">
               <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
-                사용 기술
+                태그
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag: any, index: number) => (
@@ -104,10 +169,26 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </div>
 
             {/* 주요 기능 */}
+            {project.mainFeatures && project.mainFeatures.length > 0 && (
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
+                  주요 기능
+                </h3>
+                <ul className="list-disc list-inside text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
+                  {project.mainFeatures.map(
+                    (feature: string, index: number) => (
+                      <li key={index}>{feature}</li>
+                    )
+                  )}
+                </ul>
+              </div>
+            )}
+
+            {/* 특징 */}
             {project.features && project.features.length > 0 && (
               <div className="mb-4 sm:mb-6">
                 <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3">
-                  주요 기능 및 특징
+                  특징
                 </h3>
                 <ul className="list-disc list-inside text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
                   {project.features.map((feature: string, index: number) => (
