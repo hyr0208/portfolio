@@ -2,8 +2,9 @@ import MainProfile from "../mainProfile/MainProfile";
 import AboutMe from "../aboutMe/AboutMe";
 import Career from "../career/Career";
 import ProjectPage from "../project/Project";
+import Certification from "../certification/Certification";
+import Education from "../education/Education";
 import LastPage from "../lastPage/LastPage";
-// import Education from "../education/Education";
 import useScrollToTarget from "../../hooks/useScrollToTarget";
 import NavMenu from "../../components/NavMenu";
 import { useEffect, useState } from "react";
@@ -11,10 +12,17 @@ import { useEffect, useState } from "react";
 function MainPage() {
   const careerSection = useScrollToTarget("Career");
   const projectSection = useScrollToTarget("Project");
+  const certificationSection = useScrollToTarget("Certification");
+  const educationSection = useScrollToTarget("Education");
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const navTabs = [careerSection, projectSection];
+  const navTabs = [
+    careerSection,
+    projectSection,
+    certificationSection,
+    educationSection,
+  ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,6 +63,73 @@ function MainPage() {
     return () => observer.disconnect();
   }, []);
 
+  // 스크롤에 따라 가장 가까운 섹션에 포커스 설정
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = [
+        { ref: careerSection.targetRef, setter: careerSection.setIsTarget },
+        { ref: projectSection.targetRef, setter: projectSection.setIsTarget },
+        {
+          ref: certificationSection.targetRef,
+          setter: certificationSection.setIsTarget,
+        },
+        {
+          ref: educationSection.targetRef,
+          setter: educationSection.setIsTarget,
+        },
+      ];
+
+      let closestSection: (typeof sections)[0] | null = null;
+      let closestDistance = Infinity;
+
+      sections.forEach((section) => {
+        const el = section.ref.current;
+        if (!el) return;
+
+        const rect = el.getBoundingClientRect();
+        const distance = Math.abs(rect.top);
+
+        // 화면 상단에 가까운 섹션 찾기
+        if (rect.top <= window.innerHeight * 0.3 && rect.bottom > 0) {
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestSection = section;
+          }
+        }
+      });
+
+      // 가장 가까운 섹션에만 포커스
+      sections.forEach((section) => {
+        section.setter(section === closestSection);
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // 초기 실행
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [careerSection, projectSection, certificationSection, educationSection]);
+
+  // 페이지 진입 시 초기 포커스 설정
+  useEffect(() => {
+    const checkInitialFocus = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // 스크롤이 Career 섹션 이전에 있으면 Career에 포커스
+      if (scrollPosition < viewportHeight * 2) {
+        careerSection.setIsTarget(true);
+        projectSection.setIsTarget(false);
+        certificationSection.setIsTarget(false);
+        educationSection.setIsTarget(false);
+      }
+    };
+
+    // 약간의 지연 후 초기 상태 확인 (DOM이 완전히 렌더링된 후)
+    const timer = setTimeout(checkInitialFocus, 100);
+    return () => clearTimeout(timer);
+  }, [careerSection, projectSection, certificationSection, educationSection]);
+
   return (
     <div className="bg-[#232323] text-white">
       {/* 상단 전체 너비 영역 */}
@@ -64,13 +139,13 @@ function MainPage() {
       {/* 네비게이션 메뉴 */}
 
       {/* 콘텐츠 영역 */}
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row relative 2xl:max-w-[1600px] 2xl:mx-auto">
         <NavMenu navTabs={navTabs} />
         <div className="flex-1 md:ml-[300px] md:pt-0">
           <section id="Career">
             <div
               ref={careerSection.targetRef}
-              className="md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
+              className="md:pt-12 px-6 md:px-8 flex items-center justify-center mb-8 md:mb-12"
             >
               <Career />
             </div>
@@ -79,6 +154,18 @@ function MainPage() {
           <section id="Project">
             <div ref={projectSection.targetRef} className="min-h-screen">
               <ProjectPage />
+            </div>
+          </section>
+
+          <section id="Certification">
+            <div ref={certificationSection.targetRef} className="min-h-screen">
+              <Certification />
+            </div>
+          </section>
+
+          <section id="Education">
+            <div ref={educationSection.targetRef} className="min-h-screen">
+              <Education />
             </div>
           </section>
 

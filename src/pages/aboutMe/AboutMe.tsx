@@ -14,10 +14,10 @@ import zeplin from "../../assets/image/zeplin.png";
 function AboutMe() {
   return (
     <div className="">
-      <div className=" relative h-full bg-[#232323] px-10 py-10 z-1 max-lg:h-auto max-lg:py-20">
+      <div className=" relative h-full bg-[#232323] px-10 py-10 z-1 max-lg:h-auto max-lg:py-20 2xl:max-w-[1600px] 2xl:mx-auto">
         <h2 className="text-white md:text-6xl text-5xl">About me</h2>
 
-        <div className="md:px-52 px-5 flex flex-col gap-20">
+        <div className="md:px-52 px-5 flex flex-col gap-20 2xl:max-w-[1400px] 2xl:mx-auto">
           <div className="flex flex-col items-center pt-10">
             <img
               src={emoge}
