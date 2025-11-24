@@ -13,7 +13,7 @@ import accounting from "../../assets/image/accounting.png";
 function Career() {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-auto">
+      <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-auto 2xl:max-w-[1400px] 2xl:mx-auto">
         <div className="bg-[#373737] p-5 overflow-y-auto flex flex-col rounded h-[30rem] relative justify-between">
           <div className="flex flex-col gap-3 text-white">
             <div className="tracking-tighter flex flex-col gap-3">
@@ -36,7 +36,7 @@ function Career() {
             </div>
           </div>
 
-          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-8 grid-cols-4">
+          <div className="flex-wrap md:gap-3 gap-2 grid md:grid-cols-6 grid-cols-4">
             {[office, accounting, ps, ill].map((icon, idx) => (
               <div
                 key={idx}

@@ -55,6 +55,24 @@ function MainPage() {
     return () => observer.disconnect();
   }, []);
 
+  // 페이지 진입 시 초기 포커스 설정
+  useEffect(() => {
+    const checkInitialFocus = () => {
+      const scrollPosition = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // 스크롤이 Career 섹션 이전에 있으면 Career에 포커스
+      if (scrollPosition < viewportHeight * 2) {
+        careerSection.setIsTarget(true);
+        projectSection.setIsTarget(false);
+      }
+    };
+
+    // 약간의 지연 후 초기 상태 확인 (DOM이 완전히 렌더링된 후)
+    const timer = setTimeout(checkInitialFocus, 100);
+    return () => clearTimeout(timer);
+  }, [careerSection, projectSection]);
+
   return (
     <div className="bg-[#232323] text-white">
       {/* 상단 전체 너비 영역 */}
@@ -64,13 +82,13 @@ function MainPage() {
       {/* 네비게이션 메뉴 */}
 
       {/* 콘텐츠 영역 */}
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row relative 2xl:max-w-[1600px] 2xl:mx-auto">
         <NavMenu navTabs={navTabs} />
         <div className="flex-1 md:ml-[300px] md:pt-0">
           <section id="Career">
             <div
               ref={careerSection.targetRef}
-              className="md:pt-20 px-6 md:px-11 flex items-center justify-end mb-12 md:mb-16"
+              className="md:pt-12 px-6 md:px-8 flex items-center justify-center mb-8 md:mb-12"
             >
               <Career />
             </div>

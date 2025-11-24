@@ -8,6 +8,18 @@ function useScrollToTarget(id: string) {
     const el = targetRef.current;
     if (!el) return;
 
+    // 초기 상태 확인
+    const checkInitialState = () => {
+      const rect = el.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const isInViewport = rect.top < viewportHeight * 0.5 && rect.bottom > 0;
+      if (isInViewport) {
+        setIsTarget(true);
+      }
+    };
+
+    checkInitialState();
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsTarget(entry.isIntersecting);

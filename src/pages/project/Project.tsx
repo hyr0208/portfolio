@@ -28,7 +28,7 @@ const ProjectPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#232323] text-white">
-      <div className="container mx-auto px-6 pt-16 pb-10 md:pt-12 md:pb-12">
+      <div className="container mx-auto px-6 pt-8 pb-6 md:pt-8 md:pb-8 2xl:max-w-[1400px]">
         <ProjectFilter
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}

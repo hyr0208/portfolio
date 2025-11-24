@@ -30,9 +30,9 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
     <nav
       className={`${
         isFixed
-          ? "fixed top-0 left-0 right-0 bg-[#232323] px-6 md:px-8 py-3 md:py-6 z-50 transition-all duration-300 ease-in-out"
+          ? "fixed top-0 bg-[#232323] px-6 md:px-8 py-3 md:py-6 z-50 transition-all duration-300 ease-in-out md:left-0 2xl:left-[calc((100vw-1600px)/2)]"
           : "relative"
-      } w-full md:fixed md:left-0 md:h-screen md:w-[300px]`}
+      } w-full md:fixed md:left-0 md:h-screen md:w-[300px] 2xl:left-[calc((100vw-1600px)/2)]`}
     >
       <ul className="flex justify-center md:flex-col gap-4 md:gap-6 items-center md:items-start">
         {navTabs.map((tab) => (
