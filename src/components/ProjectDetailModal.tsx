@@ -10,6 +10,9 @@ import github from "../assets/image/icon_github.svg";
 import figma from "../assets/image/icon_figma.svg";
 import zeplin from "../assets/image/zeplin.png";
 import Tooltip from "./ToolTip";
+import axios from "../assets/image/axios.png";
+import storybook from "../assets/image/storybook-icon.svg";
+import reactquery from "../assets/image/ReactQuery.png";
 
 // 기술 이름을 아이콘 경로로 매핑
 const technologyIcons: { [key: string]: string } = {
@@ -18,6 +21,9 @@ const technologyIcons: { [key: string]: string } = {
   js,
   ts,
   react,
+  reactquery,
+  axios,
+  storybook,
   tailwind,
   electron,
   github,
@@ -37,6 +43,9 @@ const technologyNames: { [key: string]: string } = {
   github: "GitHub",
   figma: "Figma",
   zeplin: "Zeplin",
+  reactquery: "React Query",
+  storybook: "Storybook",
+  axios: "Axios",
 };
 
 interface ProjectDetailModalProps {
@@ -135,13 +144,16 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   {project.technologies.map((tech: string, index: number) => {
                     const icon = technologyIcons[tech.toLowerCase()];
                     const name = technologyNames[tech.toLowerCase()] || tech;
+                    const isGithub = tech.toLowerCase() === "github";
                     return icon ? (
                       <Tooltip key={index} text={name} position="top">
                         <div className="w-[50px] h-[50px] p-0.5 rounded-xl flex flex-col justify-center items-center shrink-0 hover:bg-gray-100 transition-colors cursor-pointer">
                           <img
                             src={icon}
                             alt={name}
-                            className="w-full h-full object-contain"
+                            className={`w-full h-full object-contain ${
+                              isGithub ? "brightness-0" : ""
+                            }`}
                           />
                         </div>
                       </Tooltip>
