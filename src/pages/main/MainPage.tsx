@@ -3,8 +3,8 @@ import AboutMe from "../aboutMe/AboutMe";
 import Career from "../career/Career";
 import ProjectPage from "../project/Project";
 import Certification from "../certification/Certification";
+import Education from "../education/Education";
 import LastPage from "../lastPage/LastPage";
-// import Education from "../education/Education";
 import useScrollToTarget from "../../hooks/useScrollToTarget";
 import NavMenu from "../../components/NavMenu";
 import { useEffect, useState } from "react";
@@ -13,10 +13,16 @@ function MainPage() {
   const careerSection = useScrollToTarget("Career");
   const projectSection = useScrollToTarget("Project");
   const certificationSection = useScrollToTarget("Certification");
+  const educationSection = useScrollToTarget("Education");
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const navTabs = [careerSection, projectSection, certificationSection];
+  const navTabs = [
+    careerSection,
+    projectSection,
+    certificationSection,
+    educationSection,
+  ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -67,6 +73,10 @@ function MainPage() {
           ref: certificationSection.targetRef,
           setter: certificationSection.setIsTarget,
         },
+        {
+          ref: educationSection.targetRef,
+          setter: educationSection.setIsTarget,
+        },
       ];
 
       let closestSection: (typeof sections)[0] | null = null;
@@ -98,7 +108,7 @@ function MainPage() {
     handleScroll(); // 초기 실행
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [careerSection, projectSection, certificationSection]);
+  }, [careerSection, projectSection, certificationSection, educationSection]);
 
   // 페이지 진입 시 초기 포커스 설정
   useEffect(() => {
@@ -111,13 +121,14 @@ function MainPage() {
         careerSection.setIsTarget(true);
         projectSection.setIsTarget(false);
         certificationSection.setIsTarget(false);
+        educationSection.setIsTarget(false);
       }
     };
 
     // 약간의 지연 후 초기 상태 확인 (DOM이 완전히 렌더링된 후)
     const timer = setTimeout(checkInitialFocus, 100);
     return () => clearTimeout(timer);
-  }, [careerSection, projectSection, certificationSection]);
+  }, [careerSection, projectSection, certificationSection, educationSection]);
 
   return (
     <div className="bg-[#232323] text-white">
@@ -149,6 +160,12 @@ function MainPage() {
           <section id="Certification">
             <div ref={certificationSection.targetRef} className="min-h-screen">
               <Certification />
+            </div>
+          </section>
+
+          <section id="Education">
+            <div ref={educationSection.targetRef} className="min-h-screen">
+              <Education />
             </div>
           </section>
 

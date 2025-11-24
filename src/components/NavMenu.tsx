@@ -41,6 +41,8 @@ function NavMenu({ navTabs }: { navTabs: ScrollTarget[] }) {
               ? "Career"
               : tab.targetName === "Certification"
               ? "Cert."
+              : tab.targetName === "Education"
+              ? "Education"
               : tab.targetName;
           return (
             <li key={tab.targetName}>
