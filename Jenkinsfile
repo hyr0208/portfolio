@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:20-alpine'
-            args '-u root'
-        }
-    }
+    agent any
     
     environment {
         CI = 'false'
@@ -17,24 +12,20 @@ pipeline {
             }
         }
         
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install -g yarn'
-                sh 'yarn install'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                sh 'yarn build'
-            }
-        }
-        
-        stage('Deploy') {
+        stage('Build with Docker') {
             steps {
                 sh '''
-                    rm -rf /var/jenkins_home/web_deploy/*
-                    cp -r build/* /var/jenkins_home/web_deploy/
+                    docker run --rm \
+                        -v "$WORKSPACE":/app \
+                        -v /var/jenkins_home/web_deploy:/deploy \
+                        -w /app \
+                        node:20-alpine sh -c "
+                            npm install -g yarn && 
+                            yarn install && 
+                            yarn build && 
+                            rm -rf /deploy/* && 
+                            cp -r build/* /deploy/
+                        "
                 '''
             }
         }
