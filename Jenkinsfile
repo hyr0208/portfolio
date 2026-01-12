@@ -15,9 +15,12 @@ pipeline {
         stage('Build with Docker') {
             steps {
                 sh '''
+                    # 젠킨스 컨테이너 경로를 호스트 경로로 변환
+                    HOST_WORKSPACE=$(echo $WORKSPACE | sed 's|/var/jenkins_home|/volume1/docker/jenkins/jenkins_home|')
+                    
                     docker run --rm \
-                        -v "$WORKSPACE":/app \
-                        -v /var/jenkins_home/web_deploy:/deploy \
+                        -v "$HOST_WORKSPACE":/app \
+                        -v /volume1/docker/web:/deploy \
                         -w /app \
                         node:20-alpine sh -c "
                             corepack enable && 
