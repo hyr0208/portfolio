@@ -20,7 +20,7 @@ pipeline {
                         -v /var/jenkins_home/web_deploy:/deploy \
                         -w /app \
                         node:20-alpine sh -c "
-                            npm install -g yarn && 
+                            corepack enable && 
                             yarn install && 
                             yarn build && 
                             rm -rf /deploy/* && 
