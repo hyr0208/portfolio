@@ -1,8 +1,9 @@
 pipeline {
-    agent any
-    
-    tools {
-        nodejs 'NodeJS'
+    agent {
+        docker {
+            image 'node:20-alpine'
+            args '-u root'
+        }
     }
     
     environment {
@@ -18,6 +19,7 @@ pipeline {
         
         stage('Install Dependencies') {
             steps {
+                sh 'npm install -g yarn'
                 sh 'yarn install'
             }
         }
