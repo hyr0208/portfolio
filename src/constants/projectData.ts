@@ -3,6 +3,7 @@ import ownerMindImage from "../assets/image/ownermind.png";
 import soolgameImage from "../assets/image/soolgame-landing.png";
 import gcmsImage from "../assets/image/gcms.png";
 import smartBankImage from "../assets/image/sfis.png";
+import AllCert from "../assets/image/AllCert.png";
 
 export interface Project {
   id: number;
@@ -136,6 +137,31 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    title: "AllCert - 자격증 포털",
+    description:
+      "다양한 자격증 정보를 한눈에 확인하고, 원하는 자격증을 쉽게 찾아볼 수 있는 자격증 포털 사이트입니다.\nIT, 어학, 전문자격, 기술, 금융, 디자인 등 다양한 분야의 자격증 정보를 제공하며, 실시간 검색과 카테고리 필터링 기능을 통해 원하는 자격증을 빠르게 찾을 수 있습니다.",
+    image: AllCert,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/AllCert",
+    siteUrl: "https://allcert.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 18과 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Vite를 활용한 빠른 개발 환경 및 빌드 최적화",
+      "TailwindCSS를 사용한 반응형 디자인 구현",
+      "실시간 검색 기능으로 자격증 이름, 기관, 키워드 빠르게 검색",
+      "카테고리 필터링으로 원하는 분야의 자격증만 모아보기",
+      "클릭 한 번으로 자격증 공식 사이트 바로가기 연결",
+      "PC, 태블릿, 모바일 모든 기기에서 최적화된 반응형 화면",
+      "Lucide React를 활용한 아이콘 시스템 구축",
+    ],
+  },
+  {
+    id: 6,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -159,7 +185,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "라이더링크 랜딩페이지",
     description:
       "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
