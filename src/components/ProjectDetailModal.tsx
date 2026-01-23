@@ -13,6 +13,8 @@ import Tooltip from "./ToolTip";
 import axios from "../assets/image/axios.png";
 import storybook from "../assets/image/storybook-icon.svg";
 import reactquery from "../assets/image/ReactQuery.png";
+import firebase from "../assets/image/firebase.png";
+import vite from "../assets/image/Vite.svg";
 
 // 기술 이름을 아이콘 경로로 매핑
 const technologyIcons: { [key: string]: string } = {
@@ -29,6 +31,8 @@ const technologyIcons: { [key: string]: string } = {
   github,
   figma,
   zeplin,
+  firebase,
+  vite,
 };
 
 // 기술 이름을 한글로 매핑
@@ -46,6 +50,8 @@ const technologyNames: { [key: string]: string } = {
   reactquery: "React Query",
   storybook: "Storybook",
   axios: "Axios",
+  firebase: "Firebase",
+  vite: "Vite",
 };
 
 interface ProjectDetailModalProps {
@@ -190,7 +196,7 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   {project.mainFeatures.map(
                     (feature: string, index: number) => (
                       <li key={index}>{feature}</li>
-                    )
+                    ),
                   )}
                 </ul>
               </div>
