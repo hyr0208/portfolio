@@ -4,6 +4,7 @@ import soolgameImage from "../assets/image/soolgame-landing.png";
 import gcmsImage from "../assets/image/gcms.png";
 import smartBankImage from "../assets/image/sfis.png";
 import AllCert from "../assets/image/AllCert.png";
+import jiwonnowImage from "../assets/image/jiwonnow.png";
 
 export interface Project {
   id: number;
@@ -162,6 +163,31 @@ export const projects: Project[] = [
   },
   {
     id: 6,
+    title: "지원나우 (JiwonNow)",
+    description:
+      "사업자 정보를 입력하면 맞춤 정부지원사업을 추천해주는 웹 애플리케이션입니다.\n복잡한 정부지원사업 정보를 쉽고 빠르게 찾을 수 있도록 도와주며, 지역과 업종 기반의 개인화된 추천, 카테고리별 필터링, 즐겨찾기 기능을 제공합니다.",
+    image: jiwonnowImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "firebase", "github"],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/jiwonnow",
+    siteUrl: "https://jiwonnow.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 19와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Firebase Auth를 활용한 구글 소셜 로그인 구현",
+      "Firebase Firestore를 활용한 즐겨찾기 데이터 관리",
+      "공공데이터포털 기업마당 API 연동으로 실시간 지원사업 데이터 제공",
+      "지역 + 업종 기반 개인화된 지원사업 맞춤 추천",
+      "실시간 검색 및 카테고리/상태별 필터링 기능",
+      "Web Share API를 통한 공고 공유 기능",
+      "Jenkins, Docker, Nginx를 활용한 CI/CD 파이프라인 구축",
+    ],
+  },
+  {
+    id: 7,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -185,7 +211,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "라이더링크 랜딩페이지",
     description:
       "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
