@@ -13,7 +13,7 @@ export interface Project {
   image?: string;
   tags: string[];
   technologies?: string[]; // 사용 기술 (아이콘으로 표시)
-  category: "team" | "single";
+  category: "team" | "single" | "work";
   type: "app" | "responsive" | "toy" | "portfolio" | "publishing";
   duration: "side" | "long-term";
   githubUrl?: string;
@@ -40,7 +40,7 @@ export const projects: Project[] = [
       "storybook",
       "zeplin",
     ],
-    category: "team",
+    category: "work",
     type: "publishing",
     duration: "long-term",
     detailUrl: "modal",
@@ -71,7 +71,7 @@ export const projects: Project[] = [
       "storybook",
       "zeplin",
     ],
-    category: "team",
+    category: "work",
     type: "publishing",
     duration: "long-term",
     detailUrl: "modal",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     image: ownerMindImage,
     tags: ["팀", "반응형", "퍼블리싱"],
     technologies: ["react", "ts", "tailwind", "github", "zeplin", "figma"],
-    category: "team",
+    category: "work",
     type: "publishing",
     duration: "side",
     detailUrl: "modal",
@@ -168,7 +168,15 @@ export const projects: Project[] = [
       "사업자 정보를 입력하면 맞춤 정부지원사업을 추천해주는 웹 애플리케이션입니다.\n복잡한 정부지원사업 정보를 쉽고 빠르게 찾을 수 있도록 도와주며, 지역과 업종 기반의 개인화된 추천, 카테고리별 필터링, 즐겨찾기 기능을 제공합니다.",
     image: jiwonnowImage,
     tags: ["솔로", "반응형", "사이드"],
-    technologies: ["react", "ts", "tailwind", "vite", "firebase", "github"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "firebase",
+      "github",
+      "reactquery",
+    ],
     category: "single",
     type: "responsive",
     duration: "side",
@@ -236,4 +244,4 @@ export const projects: Project[] = [
   },
 ];
 
-export type FilterType = "all" | "team" | "single";
+export type FilterType = "all" | "team" | "single" | "work";
