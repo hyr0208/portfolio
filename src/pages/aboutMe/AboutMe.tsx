@@ -27,7 +27,7 @@ function AboutMe() {
 
             <div>
               <p className="text-white font-light text-center md:text-[24px] text-[16px]">
-                포기하지 않고 책임감있게 일하는 프론트엔드 개발자{" "}
+                따뜻한 사용자 경험을 만들어가는 프론트엔드 개발자{" "}
                 <span className="font-bold">한예린</span>입니다.
               </p>
             </div>
@@ -57,7 +57,7 @@ function AboutMe() {
                           className="w-[36px] h-[25px] object-contain"
                         />
                       </div>
-                    )
+                    ),
                   )}
                 </div>
               </div>
