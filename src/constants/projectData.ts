@@ -5,6 +5,7 @@ import gcmsImage from "../assets/image/gcms.png";
 import smartBankImage from "../assets/image/sfis.png";
 import AllCert from "../assets/image/AllCert.png";
 import jiwonnowImage from "../assets/image/jiwonnow.png";
+import lunchpingImage from "../assets/image/lunchping.png";
 
 export interface Project {
   id: number;
@@ -118,7 +119,7 @@ export const projects: Project[] = [
     description: "저만의 포트폴리오를 만들기위해 제작한 사이트입니다.",
     image: "/images/portfolio.webp",
     tags: ["솔로", "반응형", "포트폴리오", "사이드"],
-    technologies: ["react", "ts", "tailwind", "github"],
+    technologies: ["react", "ts", "tailwind", "github", "jenkins"],
     category: "single",
     type: "portfolio",
     duration: "side",
@@ -143,7 +144,15 @@ export const projects: Project[] = [
       "다양한 자격증 정보를 한눈에 확인하고, 원하는 자격증을 쉽게 찾아볼 수 있는 자격증 포털 사이트입니다.\nIT, 어학, 전문자격, 기술, 금융, 디자인 등 다양한 분야의 자격증 정보를 제공하며, 실시간 검색과 카테고리 필터링 기능을 통해 원하는 자격증을 빠르게 찾을 수 있습니다.",
     image: AllCert,
     tags: ["솔로", "반응형", "사이드"],
-    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "github",
+      "figma",
+      "jenkins",
+    ],
     category: "single",
     type: "responsive",
     duration: "side",
@@ -176,6 +185,8 @@ export const projects: Project[] = [
       "firebase",
       "github",
       "reactquery",
+      "figma",
+      "jenkins",
     ],
     category: "single",
     type: "responsive",
@@ -196,6 +207,40 @@ export const projects: Project[] = [
   },
   {
     id: 7,
+    title: "LunchPing (오늘 점심 핑)",
+    description:
+      '"오늘 점심 뭐 먹지?" 고민을 해결해주는 내 주변 맛집 추천 서비스입니다.\nLunchPing은 현재 위치를 기반으로 주변 음식점을 카테고리별로 검색하고 추천해주는 웹 애플리케이션입니다. 직관적인 UI와 카카오맵 기반의 정확한 위치 정보를 통해 쉽고 빠르게 점심 메뉴를 결정할 수 있습니다.',
+    image: lunchpingImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "github",
+      "figma",
+      "docker",
+      "jenkins",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/LunchPing",
+    siteUrl: "https://lunchping.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 19와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Vite 5를 활용한 빠른 개발 환경 및 빌드 최적화",
+      "카카오맵 API를 활용한 위치 기반 음식점 검색",
+      "사용자 위치 기반 반경 1km 이내 음식점 검색",
+      "한식, 중식, 일식, 양식, 분식, 카페 등 카테고리별 필터링",
+      "Tailwind CSS를 사용한 반응형 디자인 구현",
+      "Lucide React를 활용한 아이콘 시스템 구축",
+      "Jenkins, Docker, Nginx를 활용한 CI/CD 파이프라인 구축",
+    ],
+  },
+  {
+    id: 8,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -219,7 +264,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "라이더링크 랜딩페이지",
     description:
       "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
