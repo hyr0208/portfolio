@@ -53,10 +53,8 @@ function LastPage() {
           {/* 설명 텍스트 */}
           <div className="max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto mb-8 md:mb-12 px-4 sm:px-6">
             <p className="text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-              프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로
-              도전하고, <br className="hidden sm:block" />
-              항상 사용자의 관점에서 생각하며 사용하기 좋은 서비스를 만들고
-              싶습니다.
+              더 나은 사용 경험을 만들기 위해 <br className="hidden sm:block" />
+              기술은 깊게, 마음은 따뜻하게 성장하겠습니다.
             </p>
           </div>
 

@@ -3,6 +3,9 @@ import ownerMindImage from "../assets/image/ownermind.png";
 import soolgameImage from "../assets/image/soolgame-landing.png";
 import gcmsImage from "../assets/image/gcms.png";
 import smartBankImage from "../assets/image/sfis.png";
+import AllCert from "../assets/image/AllCert.png";
+import jiwonnowImage from "../assets/image/jiwonnow.png";
+import lunchpingImage from "../assets/image/lunchping.png";
 
 export interface Project {
   id: number;
@@ -11,7 +14,7 @@ export interface Project {
   image?: string;
   tags: string[];
   technologies?: string[]; // 사용 기술 (아이콘으로 표시)
-  category: "team" | "single";
+  category: "team" | "single" | "work";
   type: "app" | "responsive" | "toy" | "portfolio" | "publishing";
   duration: "side" | "long-term";
   githubUrl?: string;
@@ -38,7 +41,7 @@ export const projects: Project[] = [
       "storybook",
       "zeplin",
     ],
-    category: "team",
+    category: "work",
     type: "publishing",
     duration: "long-term",
     detailUrl: "modal",
@@ -69,7 +72,7 @@ export const projects: Project[] = [
       "storybook",
       "zeplin",
     ],
-    category: "team",
+    category: "work",
     type: "publishing",
     duration: "long-term",
     detailUrl: "modal",
@@ -92,7 +95,7 @@ export const projects: Project[] = [
     image: ownerMindImage,
     tags: ["팀", "반응형", "퍼블리싱"],
     technologies: ["react", "ts", "tailwind", "github", "zeplin", "figma"],
-    category: "team",
+    category: "work",
     type: "publishing",
     duration: "side",
     detailUrl: "modal",
@@ -116,7 +119,7 @@ export const projects: Project[] = [
     description: "저만의 포트폴리오를 만들기위해 제작한 사이트입니다.",
     image: "/images/portfolio.webp",
     tags: ["솔로", "반응형", "포트폴리오", "사이드"],
-    technologies: ["react", "ts", "tailwind", "github"],
+    technologies: ["react", "ts", "tailwind", "github", "jenkins"],
     category: "single",
     type: "portfolio",
     duration: "side",
@@ -136,6 +139,108 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    title: "AllCert - 자격증 포털",
+    description:
+      "다양한 자격증 정보를 한눈에 확인하고, 원하는 자격증을 쉽게 찾아볼 수 있는 자격증 포털 사이트입니다.\nIT, 어학, 전문자격, 기술, 금융, 디자인 등 다양한 분야의 자격증 정보를 제공하며, 실시간 검색과 카테고리 필터링 기능을 통해 원하는 자격증을 빠르게 찾을 수 있습니다.",
+    image: AllCert,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "github",
+      "figma",
+      "jenkins",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/AllCert",
+    siteUrl: "https://allcert.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 18과 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Vite를 활용한 빠른 개발 환경 및 빌드 최적화",
+      "TailwindCSS를 사용한 반응형 디자인 구현",
+      "실시간 검색 기능으로 자격증 이름, 기관, 키워드 빠르게 검색",
+      "카테고리 필터링으로 원하는 분야의 자격증만 모아보기",
+      "클릭 한 번으로 자격증 공식 사이트 바로가기 연결",
+      "PC, 태블릿, 모바일 모든 기기에서 최적화된 반응형 화면",
+      "Lucide React를 활용한 아이콘 시스템 구축",
+    ],
+  },
+  {
+    id: 6,
+    title: "지원나우 (JiwonNow)",
+    description:
+      "사업자 정보를 입력하면 맞춤 정부지원사업을 추천해주는 웹 애플리케이션입니다.\n복잡한 정부지원사업 정보를 쉽고 빠르게 찾을 수 있도록 도와주며, 지역과 업종 기반의 개인화된 추천, 카테고리별 필터링, 즐겨찾기 기능을 제공합니다.",
+    image: jiwonnowImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "firebase",
+      "github",
+      "reactquery",
+      "figma",
+      "jenkins",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/jiwonnow",
+    siteUrl: "https://jiwonnow.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 19와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Firebase Auth를 활용한 구글 소셜 로그인 구현",
+      "Firebase Firestore를 활용한 즐겨찾기 데이터 관리",
+      "공공데이터포털 기업마당 API 연동으로 실시간 지원사업 데이터 제공",
+      "지역 + 업종 기반 개인화된 지원사업 맞춤 추천",
+      "실시간 검색 및 카테고리/상태별 필터링 기능",
+      "Web Share API를 통한 공고 공유 기능",
+      "Jenkins, Docker, Nginx를 활용한 CI/CD 파이프라인 구축",
+    ],
+  },
+  {
+    id: 7,
+    title: "LunchPing (오늘 점심 핑)",
+    description:
+      '"오늘 점심 뭐 먹지?" 고민을 해결해주는 내 주변 맛집 추천 서비스입니다.\nLunchPing은 현재 위치를 기반으로 주변 음식점을 카테고리별로 검색하고 추천해주는 웹 애플리케이션입니다. 직관적인 UI와 카카오맵 기반의 정확한 위치 정보를 통해 쉽고 빠르게 점심 메뉴를 결정할 수 있습니다.',
+    image: lunchpingImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "github",
+      "figma",
+      "docker",
+      "jenkins",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/LunchPing",
+    siteUrl: "https://lunchping.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 19와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Vite 5를 활용한 빠른 개발 환경 및 빌드 최적화",
+      "카카오맵 API를 활용한 위치 기반 음식점 검색",
+      "사용자 위치 기반 반경 1km 이내 음식점 검색",
+      "한식, 중식, 일식, 양식, 분식, 카페 등 카테고리별 필터링",
+      "Tailwind CSS를 사용한 반응형 디자인 구현",
+      "Lucide React를 활용한 아이콘 시스템 구축",
+      "Jenkins, Docker, Nginx를 활용한 CI/CD 파이프라인 구축",
+    ],
+  },
+  {
+    id: 8,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -159,7 +264,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 6,
+    id: 9,
     title: "라이더링크 랜딩페이지",
     description:
       "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
@@ -184,4 +289,4 @@ export const projects: Project[] = [
   },
 ];
 
-export type FilterType = "all" | "team" | "single";
+export type FilterType = "all" | "team" | "single" | "work";

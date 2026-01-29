@@ -13,6 +13,10 @@ import Tooltip from "./ToolTip";
 import axios from "../assets/image/axios.png";
 import storybook from "../assets/image/storybook-icon.svg";
 import reactquery from "../assets/image/ReactQuery.png";
+import firebase from "../assets/image/firebase.png";
+import vite from "../assets/image/Vite.svg";
+import docker from "../assets/image/docker.png";
+import jenkins from "../assets/image/jenkins.png";
 
 // 기술 이름을 아이콘 경로로 매핑
 const technologyIcons: { [key: string]: string } = {
@@ -29,6 +33,10 @@ const technologyIcons: { [key: string]: string } = {
   github,
   figma,
   zeplin,
+  firebase,
+  vite,
+  docker,
+  jenkins,
 };
 
 // 기술 이름을 한글로 매핑
@@ -46,6 +54,10 @@ const technologyNames: { [key: string]: string } = {
   reactquery: "React Query",
   storybook: "Storybook",
   axios: "Axios",
+  firebase: "Firebase",
+  vite: "Vite",
+  docker: "Docker",
+  jenkins: "Jenkins",
 };
 
 interface ProjectDetailModalProps {
@@ -96,7 +108,11 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                 {project.title}
               </h2>
               <p className="text-sm sm:text-base text-gray-600">
-                {project.category === "team" ? "팀 프로젝트" : "개인 프로젝트"}{" "}
+                {project.category === "work"
+                  ? "회사 프로젝트"
+                  : project.category === "team"
+                    ? "팀 프로젝트"
+                    : "개인 프로젝트"}{" "}
                 •{" "}
                 {project.duration === "side"
                   ? "사이드 프로젝트"
@@ -190,7 +206,7 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   {project.mainFeatures.map(
                     (feature: string, index: number) => (
                       <li key={index}>{feature}</li>
-                    )
+                    ),
                   )}
                 </ul>
               </div>
