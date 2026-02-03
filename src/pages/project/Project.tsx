@@ -4,6 +4,7 @@ import type { Project } from "../../constants/projectData";
 import ProjectFilter from "../../components/ProjectFilter";
 import ProjectCard from "../../components/ProjectCard";
 import ProjectDetailModal from "../../components/ProjectDetailModal";
+import ScrollAnimation from "../../components/ScrollAnimation";
 
 const ProjectPage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
@@ -29,17 +30,25 @@ const ProjectPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#232323] text-white">
       <div className="container mx-auto px-6 pt-8 pb-6 md:pt-8 md:pb-8 2xl:max-w-[1400px]">
-        <ProjectFilter
-          activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
-        />
+        <ScrollAnimation animation="fade-up">
+          <ProjectFilter
+            activeFilter={activeFilter}
+            onFilterChange={setActiveFilter}
+          />
+        </ScrollAnimation>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
-            <ProjectCard
+          {filteredProjects.map((project, index) => (
+            <ScrollAnimation
               key={project.id}
-              project={project}
-              onDetailClick={() => handleProjectClick(project)}
-            />
+              animation="fade-up"
+              delay={index * 100}
+              threshold={0.05}
+            >
+              <ProjectCard
+                project={project}
+                onDetailClick={() => handleProjectClick(project)}
+              />
+            </ScrollAnimation>
           ))}
         </div>
 
