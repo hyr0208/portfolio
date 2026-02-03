@@ -10,43 +10,78 @@ import github from "../../assets/image/icon_github.svg";
 import discord from "../../assets/image/icon_discord.svg";
 import figma from "../../assets/image/icon_figma.svg";
 import zeplin from "../../assets/image/zeplin.png";
+import ScrollAnimation from "../../components/ScrollAnimation";
 
 function AboutMe() {
   return (
     <div className="">
       <div className=" relative h-full bg-[#232323] px-10 py-10 z-1 max-lg:h-auto max-lg:py-20 2xl:max-w-[1600px] 2xl:mx-auto">
-        <h2 className="text-white md:text-6xl text-5xl">About me</h2>
+        <ScrollAnimation animation="fade-down">
+          <h2 className="text-white md:text-6xl text-5xl">About me</h2>
+        </ScrollAnimation>
 
         <div className="md:px-52 px-5 flex flex-col gap-20 2xl:max-w-[1400px] 2xl:mx-auto">
-          <div className="flex flex-col items-center pt-10">
-            <img
-              src={emoge}
-              alt=""
-              className="md:w-[500px] h-auto rounded-xl"
-            />
+          <ScrollAnimation animation="zoom-in" delay={200}>
+            <div className="flex flex-col items-center pt-10">
+              <img
+                src={emoge}
+                alt=""
+                className="md:w-[500px] h-auto rounded-xl animate-wiggle"
+                style={{
+                  animation: "wiggle 3s ease-in-out infinite",
+                }}
+              />
 
-            <div>
-              <p className="text-white font-light text-center md:text-[24px] text-[16px]">
-                따뜻한 사용자 경험을 만들어가는 프론트엔드 개발자{" "}
-                <span className="font-bold">한예린</span>입니다.
-              </p>
+              <div>
+                <p className="text-white font-light text-center md:text-[24px] text-[16px]">
+                  따뜻한 사용자 경험을 만들어가는 프론트엔드 개발자{" "}
+                  <span className="font-bold">한예린</span>입니다.
+                </p>
+              </div>
             </div>
-          </div>
+          </ScrollAnimation>
 
           <div className="flex flex-col items-start gap-6 ">
-            <div className="text-white md:text-4xl text-3xl font-normal">
-              Skill & Tolls
-            </div>
+            <ScrollAnimation animation="fade-right">
+              <div className="text-white md:text-4xl text-3xl font-normal">
+                Skill & Tolls
+              </div>
+            </ScrollAnimation>
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
-              <div>
-                <div className="text-white md:text-2xl text-[20px] font-light pb-5">
-                  FrontEnd
-                </div>
+              <ScrollAnimation animation="fade-up" delay={100}>
+                <div>
+                  <div className="text-white md:text-2xl text-[20px] font-light pb-5">
+                    FrontEnd
+                  </div>
 
-                <div className="flex flex-wrap md:gap-3 gap-2">
-                  {[html, css, js, ts, react, tailwind, electron].map(
-                    (icon, idx) => (
+                  <div className="flex flex-wrap md:gap-3 gap-2">
+                    {[html, css, js, ts, react, tailwind, electron].map(
+                      (icon, idx) => (
+                        <div
+                          key={idx}
+                          className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
+                        >
+                          <img
+                            src={icon}
+                            alt=""
+                            className="w-[36px] h-[25px] object-contain"
+                          />
+                        </div>
+                      ),
+                    )}
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation animation="fade-up" delay={200}>
+                <div>
+                  <div className="text-white md:text-2xl text-[20px] font-light pb-5">
+                    Tools
+                  </div>
+
+                  <div className="flex flex-wrap md:gap-3 gap-2">
+                    {[github, discord, figma, zeplin].map((icon, idx) => (
                       <div
                         key={idx}
                         className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
@@ -57,31 +92,10 @@ function AboutMe() {
                           className="w-[36px] h-[25px] object-contain"
                         />
                       </div>
-                    ),
-                  )}
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <div>
-                <div className="text-white md:text-2xl text-[20px] font-light pb-5">
-                  Tools
-                </div>
-
-                <div className="flex flex-wrap md:gap-3 gap-2">
-                  {[github, discord, figma, zeplin].map((icon, idx) => (
-                    <div
-                      key={idx}
-                      className="w-[60px] h-[60px] p-1 rounded-xl bg-black flex flex-col justify-center items-center shrink-0"
-                    >
-                      <img
-                        src={icon}
-                        alt=""
-                        className="w-[36px] h-[25px] object-contain"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>

@@ -23,5 +23,20 @@
   white-space: nowrap;
   border-right: 4px solid black;
   width: 0;
-  animation: typing 2.5s steps(14, end) forwards, blink 0.75s step-end infinite;
+  animation:
+    typing 2.5s steps(14, end) forwards,
+    blink 0.75s step-end infinite;
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
 }
