@@ -6,6 +6,7 @@ import smartBankImage from "../assets/image/sfis.png";
 import AllCert from "../assets/image/AllCert.png";
 import jiwonnowImage from "../assets/image/jiwonnow.png";
 import lunchpingImage from "../assets/image/lunchping.png";
+import bompickImage from "../assets/image/bompick.png";
 
 export interface Project {
   id: number;
@@ -241,6 +242,40 @@ export const projects: Project[] = [
   },
   {
     id: 8,
+    title: "bomPick (봄픽)",
+    description:
+      '"오늘 뭐 볼까?" 고민을 해결해주는 OTT 콘텐츠 메타추천 서비스입니다.\n넷플릭스, 디즈니+, 티빙, 웨이브, 왓챠, 쿠팡플레이 등 내가 구독 중인 서비스의 콘텐츠만 골라보고, 결정 장애가 올 때는 랜덤 픽 기능으로 엄선된 콘텐츠를 추천받을 수 있습니다.',
+    image: bompickImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "github",
+      "figma",
+      "docker",
+      "jenkins",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/bomPick",
+    siteUrl: "https://bompick.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 19와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Vite를 활용한 빠른 개발 환경 및 빌드 최적화",
+      "TMDb API를 활용한 영화 및 TV 시리즈 통합 검색",
+      "OTT 플랫폼별 필터링으로 구독 중인 서비스 콘텐츠만 탐색",
+      "결정 장애 해결을 위한 랜덤 픽 추천 기능",
+      "다크 모드 지원으로 편안한 콘텐츠 탐색 경험 제공",
+      "Tailwind CSS를 사용한 반응형 디자인 구현",
+      "Jenkins, Docker, Nginx를 활용한 CI/CD 파이프라인 구축",
+    ],
+  },
+  {
+    id: 9,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -264,7 +299,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "라이더링크 랜딩페이지",
     description:
       "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
