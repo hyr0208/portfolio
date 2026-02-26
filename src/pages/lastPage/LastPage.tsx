@@ -75,8 +75,7 @@ function LastPage() {
           {/* 푸터 */}
           <div className="fixed bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 text-center text-gray-400 text-xs sm:text-sm px-4">
             <p className="mb-1 leading-tight">
-              Copyright <span>{year.get("year")}</span>. hanyerin all rights
-              reserved.
+              Copyright 2026. hanyerin all rights reserved.
             </p>
             <p className="hidden sm:block leading-tight">
               React, Tailwind CSS 기반으로 제작된 사이트입니다.
