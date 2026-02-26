@@ -150,6 +150,50 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               </p>
             </div>
 
+            {/* 사용 API & 기술 스택 */}
+            {(project.apis?.length > 0 ||
+              project.techHighlights?.length > 0) && (
+              <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row gap-4 sm:gap-8">
+                {project.apis && project.apis.length > 0 && (
+                  <div className="flex-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 flex items-center gap-1.5">
+                      <span className="text-blue-500">📡</span> 사용 API
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {project.apis.map((api: string, index: number) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1.5 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-xs sm:text-sm font-medium"
+                        >
+                          {api}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {project.techHighlights &&
+                  project.techHighlights.length > 0 && (
+                    <div className="flex-1">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-2 sm:mb-3 flex items-center gap-1.5">
+                        <span className="text-green-500">🛠</span> 기술 스택
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.techHighlights.map(
+                          (tech: string, index: number) => (
+                            <span
+                              key={index}
+                              className="px-3 py-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full text-xs sm:text-sm font-medium"
+                            >
+                              {tech}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  )}
+              </div>
+            )}
+
             {/* 사용 기술 */}
             {project.technologies && project.technologies.length > 0 && (
               <div className="mb-4 sm:mb-6">
