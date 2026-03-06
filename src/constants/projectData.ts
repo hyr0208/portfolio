@@ -7,6 +7,7 @@ import AllCert from "../assets/image/AllCert.png";
 import jiwonnowImage from "../assets/image/jiwonnow.png";
 import lunchpingImage from "../assets/image/lunchping.png";
 import bompickImage from "../assets/image/bompick.png";
+import coffeeImage from "../assets/image/coffee.png";
 
 export interface Project {
   id: number;
@@ -349,6 +350,48 @@ export const projects: Project[] = [
   },
   {
     id: 9,
+    title: "커피 찾기 (Coffee Finding)",
+    description:
+      "지뢰찾기에서 영감을 받은 실시간 멀티플레이어 팀 내기 게임입니다.\n링크를 공유하면 각자 폰에서 접속해 함께 플레이할 수 있습니다. 방 만들기/코드 참가, 초대 링크 복사, 칸 수·커피 수 설정, 같은 멤버로 재시작 등의 기능을 제공합니다.",
+    image: coffeeImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "vite",
+      "firebase",
+      "github",
+      "docker",
+      "jenkins",
+    ],
+    apis: ["Firebase Realtime Database"],
+    techHighlights: [
+      "React + TypeScript",
+      "Vite 5",
+      "Firebase Realtime Database",
+      "실시간 멀티플레이어",
+      "CI/CD (Jenkins + Docker)",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/lotto",
+    siteUrl: "https://lotto.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "Firebase Realtime Database를 활용한 실시간 멀티플레이어 동기화",
+      "링크 공유로 각자 디바이스에서 실시간 참여 가능",
+      "방 만들기 및 코드/링크로 참가하기 기능",
+      "자기 차례에만 칸 선택 가능한 턴 기반 게임 로직",
+      "칸 수(9/12/16/20) 및 커피 수(1~3개) 커스텀 설정",
+      "같은 멤버로 바로 재시작 가능한 리매치 기능",
+      "Jenkins, Docker, Nginx를 활용한 CI/CD 파이프라인 구축",
+    ],
+  },
+  {
+    id: 10,
     title: "술게임 랜딩페이지",
     description:
       "술게임은 친구들과 함께 즐길 수 있는 다양한 술게임을 제공하는 서비스입니다.\n다양한 게임 모드와 재미있는 인터랙션을 통해 사용자들이 즐겁고 편안한 시간을 보낼 수 있도록 설계되었습니다. 직관적인 UI와 부드러운 애니메이션으로 사용자 경험을 향상시키고, 모바일과 데스크톱 모두에서 최적화된 반응형 디자인을 제공합니다.",
@@ -377,7 +420,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: "라이더링크 랜딩페이지",
     description:
       "라이더링크는 자전거 및 오토바이 라이더를 위한 최적의 경로 추천 서비스입니다.\n사용자의 현재 위치와 목적지를 기반으로 최적의 라이딩 경로를 제공하며, 실시간 교통 정보를 반영하여 안전하고 효율적인 경로를 안내합니다. 다양한 경로 옵션(최단 거리, 최단 시간, 경치 좋은 길)을 제공하고, 자주 이용하는 경로를 저장하고 공유할 수 있는 기능을 제공합니다.",
