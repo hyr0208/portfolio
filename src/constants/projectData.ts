@@ -8,6 +8,8 @@ import jiwonnowImage from "../assets/image/jiwonnow.png";
 import lunchpingImage from "../assets/image/lunchping.png";
 import bompickImage from "../assets/image/bompick.png";
 import coffeeImage from "../assets/image/coffee.png";
+import invitationLetterImage from "../assets/image/InvitationLetter.png";
+import invitationPortfolioImage from "../assets/image/invitationPortfolio.png";
 
 export interface Project {
   id: number;
@@ -447,6 +449,68 @@ export const projects: Project[] = [
       "다양한 화면 크기에 대응하는 반응형 레이아웃",
       "CSS Grid와 Flexbox를 활용한 반응형 레이아웃 구조 설계",
       "이미지 최적화 및 레이지 로딩을 통한 초기 로딩 속도 개선",
+    ],
+  },
+  {
+    id: 12,
+    title: "모바일 청첩장 (Wedding Invitation Letter)",
+    description:
+      "모던하고 심플하면서 따뜻한 톤의 모바일 청첩장 샘플입니다.\n커버, 인사말, 사진, 연락처, 행사 일시(달력/D-day), 갤러리, 오시는 길, 축의금 계좌 정보로 이어지는 단일 페이지 청첩장으로, 콘텐츠를 데이터 파일 하나로 중앙화하여 손쉽게 커스터마이징할 수 있습니다.",
+    image: invitationLetterImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    techHighlights: [
+      "React 19 + TypeScript",
+      "Vite",
+      "Tailwind CSS v4",
+      "중앙화된 데이터 관리 구조",
+      "Cloudflare Pages 자동 배포",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/wedding-invitation-letter",
+    siteUrl: "https://wedding.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React 19와 TypeScript를 활용한 모던 프론트엔드 개발",
+      "이름, 날짜, 장소, 계좌 등 모든 콘텐츠를 데이터 파일 하나로 중앙 관리",
+      "사진 파일명 교체만으로 갤러리 이미지를 즉시 반영",
+      "캘린더 및 D-day 카운트다운 컴포넌트 구현",
+      "6컷 갤러리 그리드 레이아웃",
+      "OG 메타 태그를 활용한 소셜 미디어 공유 최적화",
+      "Cloudflare Pages를 통한 main 브랜치 자동 배포 워크플로우 구축",
+    ],
+  },
+  {
+    id: 13,
+    title: "청첩장 템플릿 갤러리 (Invitation Portfolio)",
+    description:
+      "다양한 모바일 청첩장 템플릿을 모아 볼 수 있는 갤러리형 포트폴리오 서비스입니다.\n사용자가 카테고리별로 템플릿을 둘러보고, 마음에 드는 디자인을 발견하면 바로 제작을 문의할 수 있도록 설계했습니다. 셀프빌더가 아닌, 큐레이션과 문의 전환에 집중한 갤러리 서비스입니다.",
+    image: invitationPortfolioImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    siteUrl: "https://invite.yyyerin.co.kr",
+    apis: ["EmailJS API"],
+    techHighlights: [
+      "React + TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "EmailJS 연동 (백엔드 없는 이메일 문의)",
+      "반응형 디자인",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/invitation-portfolio",
+    detailUrl: "modal",
+    mainFeatures: [
+      "미니멀, 클래식, 로맨틱, 유니크, 포토 5가지 카테고리 템플릿 필터링",
+      "템플릿 갤러리 페이지에서 디자인별 미리보기 제공",
+      "템플릿 상세 페이지에서 폰 목업 미리보기 및 제작 문의 모달 제공",
+      "라이브 프리뷰 페이지를 통한 풀페이지 템플릿 확인",
+      "EmailJS를 활용한 백엔드 없는 제작 문의 이메일 전송 구현",
+      "모바일/데스크톱 반응형 레이아웃 지원",
     ],
   },
 ];
