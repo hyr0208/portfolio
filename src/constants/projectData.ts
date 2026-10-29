@@ -15,6 +15,7 @@ import portfolio2026Image from "../assets/image/portfolio2026.png";
 import noteForestImage from "../assets/image/noteForest.png";
 import housingTrackerImage from "../assets/image/housingTracker.png";
 import nareulbomImage from "../assets/image/nareulbom.png";
+import findaImage from "../assets/image/finda.png";
 
 export interface Project {
   id: number;
@@ -680,6 +681,49 @@ export const projects: Project[] = [
       "Node.js 검색 API 서버에서 입력 검증 및 상류 API 오류·빈 결과 구분 처리",
       "Better Auth 기반 카카오·Apple 로그인과 서버 세션, 회원 탈퇴 연동",
       "Docker 실행 설정 및 서버 회귀 테스트 작성",
+    ],
+  },
+  {
+    id: 19,
+    title: "핀다 여신관리 시스템 (nTree.NEXT AI)",
+    description:
+      "핀다의 대출 심사·실행·채권 관리 업무를 처리하는 여신관리 시스템을 MSA 구조로 재구축한 프로젝트입니다.\nNext.js App Router 기반의 프론트엔드 + BFF와 Electron 데스크톱 앱을 담당했으며, 기존 레거시 화면을 신규 아키텍처로 이식하고 공통 컴포넌트, 결재, 대시보드, 인증(MFA) 등 시스템 전반의 프론트엔드 기능을 개발했습니다.",
+    image: findaImage,
+    tags: ["팀", "웹"],
+    technologies: [
+      "react",
+      "ts",
+      "tailwind",
+      "electron",
+      "zustand",
+      "axios",
+      "reactquery",
+      "storybook",
+    ],
+    apis: ["RealGrid API", "Gateway API (MSA)"],
+    techHighlights: [
+      "Next.js App Router + BFF",
+      "React 19 + TypeScript",
+      "Electron 데스크톱 앱 + 자동 업데이트",
+      "Zustand + TanStack Query",
+      "Storybook 컴포넌트 문서화",
+      "Vitest 단위 테스트",
+    ],
+    category: "work",
+    type: "publishing",
+    duration: "long-term",
+    detailUrl: "modal",
+    mainFeatures: [
+      "Next.js API Routes 기반 BFF 구성 — httpOnly 쿠키 → Authorization 헤더 변환, 401 자동 재시도 Gateway 프록시",
+      "로그인 MFA(TOTP/SMS/EMAIL) 분기 플로우 및 OTP 인증 모달, 비밀번호 변경·초기화 화면 구현",
+      "심사원장(LAA010), 진행상태내역, 대출완료목록 등 여신 핵심 화면을 레거시에서 신규 구조로 이식",
+      "메인 대시보드(심사 현황 차트, 연체 현황, 결재함) 및 도메인별 화면 런처 구현",
+      "결재요청·승인/반려 모달, 휴가자 자동제외, 포커스된 창 기준 팝업 등 공통 결재 기능 개발",
+      "RealGrid 공통 그리드 — 컬럼 표시/숨김·순서 저장, 숫자 정렬, 라이선스 오류 대비 failover 그리드",
+      "엑셀 다운로드 권한 검사 및 서버 생성형 다운로드로 전환, 건강보험 스크래핑 결과 PDF 다운로드",
+      "사용자별 메뉴 배치(좌/상단/우)·즐겨찾기 서버 저장, 화면별 팝업 크기 설정 적용",
+      "Storybook으로 공통 UI 컴포넌트 문서화 및 Vitest 단위 테스트 작성",
+      "Electron 데스크톱 앱 패키징 및 electron-updater 기반 자동 업데이트",
     ],
   },
 ];

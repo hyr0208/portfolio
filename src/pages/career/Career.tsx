@@ -16,7 +16,7 @@ function Career() {
     <div className="min-h-screen overflow-x-hidden">
       <div className="items-start justify-end grid grid-cols-2 grid-row-3 gap-4 pt-9 max-lg:h-auto max-lg:grid-cols-1 max-xl:grid-cols-1 max-2xl:h-auto 2xl:max-w-[1400px] 2xl:mx-auto">
         <ScrollAnimation animation="fade-up" delay={0}>
-          <div className="bg-[#373737] md:w-[600px] p-5 rounded md:h-[30rem] h-[40rem] flex flex-col justify-between">
+          <div className="bg-[#373737] md:w-[600px] p-5 overflow-y-auto rounded md:h-[30rem] h-[40rem] flex flex-col justify-between">
             <div className="tracking-tighter flex flex-col gap-3">
               <span className="text-[14px] text-[#a6a6a6]">
                 2021.11 - 재직중
@@ -48,6 +48,10 @@ function Career() {
                 </li>
                 <li>
                   React, Electron을 활용한 저축은행 차세대 시스템 유지보수 작업
+                </li>
+                <li>
+                  Next.js, Electron을 활용한 핀다 여신관리 시스템 MSA 재구축
+                  작업
                 </li>
               </ul>
             </div>
