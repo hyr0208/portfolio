@@ -10,6 +10,11 @@ import bompickImage from "../assets/image/bompick.png";
 import coffeeImage from "../assets/image/coffee.png";
 import invitationLetterImage from "../assets/image/InvitationLetter.png";
 import invitationPortfolioImage from "../assets/image/invitationPortfolio.png";
+import birthdayArchiveImage from "../assets/image/birthdayArchive.png";
+import portfolio2026Image from "../assets/image/portfolio2026.png";
+import noteForestImage from "../assets/image/noteForest.png";
+import housingTrackerImage from "../assets/image/housingTracker.png";
+import nareulbomImage from "../assets/image/nareulbom.png";
 
 export interface Project {
   id: number;
@@ -511,6 +516,170 @@ export const projects: Project[] = [
       "라이브 프리뷰 페이지를 통한 풀페이지 템플릿 확인",
       "EmailJS를 활용한 백엔드 없는 제작 문의 이메일 전송 구현",
       "모바일/데스크톱 반응형 레이아웃 지원",
+    ],
+  },
+  {
+    id: 14,
+    title: "Birthday Little Archive",
+    description:
+      "친구의 생일을 축하하기 위해 만든 스크롤형 추억 아카이브 페이지입니다.\n함께한 순간의 사진과 메시지를 스크롤을 따라 하나씩 펼쳐 보여주며, 종이 질감과 손글씨 느낌의 따뜻한 디자인으로 생일 카드처럼 구성했습니다.",
+    image: birthdayArchiveImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    techHighlights: [
+      "React + TypeScript",
+      "Vite",
+      "Tailwind CSS 4",
+      "스크롤 기반 연출",
+    ],
+    category: "single",
+    type: "toy",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/birthday-little-archive",
+    siteUrl: "https://hbd.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "React와 TypeScript를 활용한 단일 페이지 구성",
+      "스크롤을 따라 사진과 메시지가 이어지는 추억 아카이브 레이아웃",
+      "Tailwind CSS 4를 활용한 종이 질감·손글씨 콘셉트 스타일링",
+      "OG 이미지 설정으로 링크 공유 시 생일 카드 미리보기 제공",
+      "모바일에서 보기 좋은 반응형 레이아웃",
+    ],
+  },
+  {
+    id: 15,
+    title: "포트폴리오 2026",
+    description:
+      "2026년 버전으로 새롭게 제작한 원페이지 포트폴리오 사이트입니다.\nHero, About, Career, Projects, Certification, Education, Contact 섹션으로 구성되어 있으며, 커서를 따라다니는 프로젝트 썸네일 프리뷰와 모바일 바텀 시트 등 인터랙션에 집중했습니다.",
+    image: portfolio2026Image,
+    tags: ["솔로", "반응형", "포트폴리오", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    techHighlights: [
+      "React 19 + TypeScript",
+      "Vite 8",
+      "Tailwind CSS 4",
+      "Framer Motion 애니메이션",
+      "SEO / OG 메타",
+    ],
+    category: "single",
+    type: "portfolio",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/portfolio-2026",
+    siteUrl: "https://portfolio2026.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "IntersectionObserver 기반 커스텀 훅으로 현재 섹션을 감지해 내비게이션에 실시간 표시",
+      "Framer Motion 스프링 애니메이션으로 커서를 따라다니는 프로젝트 썸네일 프리뷰 구현",
+      "모바일 환경에서는 프로젝트 상세를 바텀 시트로 노출해 터치 인터랙션 최적화",
+      "프로젝트 상세 모달로 스택, 역할, 스크린샷 제공",
+      "경력·프로젝트·자격증·학력 데이터를 타입 정의된 데이터 파일로 분리해 콘텐츠와 UI 로직 분리",
+      "Open Graph, Twitter Card 메타 태그로 링크 공유 미리보기 지원",
+    ],
+  },
+  {
+    id: 16,
+    title: "노트숲 (Note Forest)",
+    description:
+      "생각을 가볍게 기록하고, 어디서든 이어 쓰는 개인용 메모 웹앱입니다.\n웹 브라우저와 설치형 macOS 앱에서 같은 계정으로 사용할 수 있으며, 폴더·즐겨찾기·검색으로 메모를 정리하고 계정별 클라우드 저장과 실시간 동기화를 지원합니다.",
+    image: noteForestImage,
+    tags: ["솔로", "반응형", "사이드"],
+    technologies: ["react", "ts", "tailwind", "vite", "github"],
+    apis: ["Supabase Auth", "Supabase Postgres", "Supabase Realtime"],
+    techHighlights: [
+      "React + TypeScript",
+      "Vite",
+      "Tailwind CSS 4",
+      "Tiptap 에디터",
+      "Supabase 실시간 동기화 + RLS",
+      "Swift WKWebView macOS 앱",
+    ],
+    category: "single",
+    type: "responsive",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/note-forest",
+    siteUrl: "https://notes.yyyerin.co.kr",
+    detailUrl: "modal",
+    mainFeatures: [
+      "Tiptap 기반 서식이 바로 보이는 메모 편집기 (체크리스트, 표, 이미지, 실행 취소/다시 실행)",
+      "기존 Markdown 메모를 그대로 읽고 Markdown으로 저장하는 양방향 변환",
+      "폴더, 즐겨찾기, 검색, 휴지통 복원 등 메모 정리 기능",
+      "Supabase Auth 이메일 로그인과 Row Level Security로 계정별 데이터 접근 제한",
+      "Supabase Realtime을 활용한 여러 기기 간 실시간 동기화",
+      "메모별 저장 요청 순차 처리로 늦은 응답이 최신 입력을 덮어쓰지 않도록 보장",
+      "Swift WKWebView 기반 macOS 설치 앱 제공 및 GitHub Actions 릴리즈 자동화",
+      "Cloudflare Pages 배포",
+    ],
+  },
+  {
+    id: 17,
+    title: "내 차례 (Housing Tracker)",
+    description:
+      "공공임대·행복주택 예비입주자가 신청 내역과 순번을 관리하고, 공개 대기현황 변동을 알려주는 모바일 앱입니다.\n신청 정보를 한 곳에 모아두고 순번 변화와 입주 준비 과정을 놓치지 않도록 돕는 iOS·Android 앱으로, 마이홈 공공 API를 주기적으로 조회해 단지별 대기인원이 바뀌면 푸시 알림을 보냅니다.",
+    image: housingTrackerImage,
+    tags: ["솔로", "앱", "사이드"],
+    technologies: ["react", "ts", "github"],
+    apis: [
+      "마이홈 공공데이터 API",
+      "Kakao Login SDK",
+      "Expo Push Notification",
+    ],
+    techHighlights: [
+      "Expo 57 + React Native 0.86",
+      "TypeScript + Expo Router",
+      "카카오 네이티브 로그인",
+      "Node.js 동기화 서버",
+      "Expo Notifications 푸시 알림",
+    ],
+    category: "single",
+    type: "app",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/housing-tracker-mobile",
+    detailUrl: "modal",
+    mainFeatures: [
+      "Expo와 React Native를 활용한 iOS·Android 크로스플랫폼 앱 개발",
+      "Native Kakao Login SDK를 활용한 카카오 로그인",
+      "공고명, 공식 단지명, 지역, 예비순번 등록 및 순번 변화 이력 기록",
+      "마이홈 공공 API로 단지별 공개 대기인원 조회",
+      "Node.js 동기화 서버가 공개 대기인원을 주기적으로 비교해 변동 시 앱·푸시 알림 발송",
+      "신청별 입주 준비 체크리스트와 진행률 표시",
+      "AsyncStorage 기반 로컬 데이터 저장 및 마이그레이션",
+      "개인 인증정보를 수집하지 않고 개인 순번과 공개 대기인원을 분리해 관리",
+    ],
+  },
+  {
+    id: 18,
+    title: "나를봄 (Nareulbom)",
+    description:
+      "약·영양제 검색과 개인 건강정보를 기반으로 맞춤 건강관리를 돕는 모바일 앱입니다.\n첫 실행 시 건강정보 문진을 거쳐 관리 목표에 맞는 홈 화면을 구성하고, 식약처 공공 API로 의약품을 검색해 복용 목록과 일정을 관리할 수 있습니다.",
+    image: nareulbomImage,
+    tags: ["솔로", "앱", "사이드"],
+    technologies: ["react", "ts", "docker", "github"],
+    apis: [
+      "식약처 e약은요 API",
+      "식약처 의약품 제품 허가정보 API",
+      "Kakao / Apple 로그인",
+    ],
+    techHighlights: [
+      "Expo 57 + React Native 0.86",
+      "TypeScript + Expo Router",
+      "Node.js 검색 API 서버",
+      "Better Auth 세션 관리",
+      "Docker 실행 환경",
+    ],
+    category: "single",
+    type: "app",
+    duration: "side",
+    githubUrl: "https://github.com/hyr0208/nareulbom-mobile",
+    detailUrl: "modal",
+    mainFeatures: [
+      "Expo와 React Native를 활용한 iOS·Android 크로스플랫폼 앱 개발",
+      "관리 목표·기본정보·건강 상태·복용 제품·생활습관·영양정보 6단계 건강 문진 및 프로필 관리",
+      "문진 결과에 따른 홈 목표, 이어서 할 일, 복용 일정 표시",
+      "식약처 e약은요·제품 허가정보 API 기반 의약품 검색, 상세, 출처 표시",
+      "검색되지 않는 약·영양제 직접 등록 및 복용 목록·복용량·일정 관리",
+      "Node.js 검색 API 서버에서 입력 검증 및 상류 API 오류·빈 결과 구분 처리",
+      "Better Auth 기반 카카오·Apple 로그인과 서버 세션, 회원 탈퇴 연동",
+      "Docker 실행 설정 및 서버 회귀 테스트 작성",
     ],
   },
 ];
