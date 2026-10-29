@@ -27,7 +27,8 @@ pipeline {
                             yarn install && 
                             yarn build && 
                             rm -rf /deploy/* && 
-                            cp -r build/* /deploy/
+                            cp -r build/* /deploy/ &&
+                            chmod -R a+rX /deploy
                         "
                 '''
             }
